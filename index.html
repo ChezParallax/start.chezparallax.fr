@@ -102,28 +102,28 @@
 
 
       <!-- LOGO (à gauche) -->
-      <a href="#" class="flex items-center gap-2 shrink-0">
+      <a href="#" onclick="sa_event('click_nav_home')" class="flex items-center gap-2 shrink-0">
         <img src="https://i.imgur.com/o7HP7dp.png" alt="Logo Parallax" class="h-8 w-auto">
       </a>
 
       <!-- NAVIGATION (au centre) -->
       <nav class="hidden md:flex items-center gap-6 font-semibold text-sm mx-auto">
-        <a href="#solution" class="hover:text-[#c78a5c] transition">Parallax ?</a>
-        <a href="#benefices" class="hover:text-[#c78a5c] transition">Ce qu’on vous apporte</a>
-        <a href="#plan" class="hover:text-[#c78a5c] transition">Le déroulé</a>
-        <a href="#temoignages" class="hover:text-[#c78a5c] transition">Ils en parlent</a>
-        <a href="#faq" class="hover:text-[#c78a5c] transition">FAQ</a>
+        <a href="#solution" onclick="sa_event('click_nav_solution_desktop')" class="hover:text-[#c78a5c] transition">Parallax ?</a>
+        <a href="#benefices" onclick="sa_event('click_nav_benefices_desktop')" class="hover:text-[#c78a5c] transition">Ce qu’on vous apporte</a>
+        <a href="#plan" onclick="sa_event('click_nav_plan_desktop')" class="hover:text-[#c78a5c] transition">Le déroulé</a>
+        <a href="#temoignages" onclick="sa_event('click_nav_temoignages_desktop')" class="hover:text-[#c78a5c] transition">Ils en parlent</a>
+        <a href="#faq" onclick="sa_event('click_nav_faq_desktop')" class="hover:text-[#c78a5c] transition">FAQ</a>
       </nav>
 
       <!-- CTA (à droite) -->
       <div class="flex items-center gap-4 shrink-0">
-        <a href="#cta"
+        <a href="#cta" onclick="sa_event('click_cta_navbar_desktop')"
           class="hidden md:inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-2.5 px-5 rounded-lg text-sm shadow hover:scale-[1.03] active:scale-[0.98]">
           Je réserve mon appel découverte
         </a>
 
         <!-- MENU BURGER MOBILE -->
-        <button @click="isOpen = !isOpen" class="md:hidden" aria-label="Ouvrir le menu">
+        <button @click="isOpen = !isOpen" onclick="sa_event('click_nav_burger')" class="md:hidden" aria-label="Ouvrir le menu">
           <i data-lucide="menu" class="w-6 h-6 stroke-2"></i>
         </button>
       </div>
@@ -132,12 +132,12 @@
     <!-- MENU MOBILE -->
     <div x-show="isOpen" x-transition class="md:hidden px-6 pb-6">
       <nav class="flex flex-col gap-4 font-semibold text-sm pt-4 text-[#25353f]">
-        <a href="#solution" @click="isOpen = false" class="hover:text-[#c78a5c]">Parallax ?</a>
-        <a href="#benefices" @click="isOpen = false" class="hover:text-[#c78a5c]">Ce qu’on vous apporte</a>
-        <a href="#plan" @click="isOpen = false" class="hover:text-[#c78a5c]">Le déroulé</a>
-        <a href="#temoignages" @click="isOpen = false" class="hover:text-[#c78a5c]">Ils en parlent</a>
-        <a href="#faq" @click="isOpen = false" class="hover:text-[#c78a5c]">FAQ</a>
-        <a href="#cta" @click="isOpen = false"
+        <a href="#solution" @click="isOpen = false" onclick="sa_event('click_nav_solution_mobile')" class="hover:text-[#c78a5c]">Parallax ?</a>
+        <a href="#benefices" @click="isOpen = false" onclick="sa_event('click_nav_benefices_mobile')" class="hover:text-[#c78a5c]">Ce qu’on vous apporte</a>
+        <a href="#plan" @click="isOpen = false" onclick="sa_event('click_nav_plan_mobile')" class="hover:text-[#c78a5c]">Le déroulé</a>
+        <a href="#temoignages" @click="isOpen = false" onclick="sa_event('click_nav_temoignages_mobile')" class="hover:text-[#c78a5c]">Ils en parlent</a>
+        <a href="#faq" @click="isOpen = false" onclick="sa_event('click_nav_faq_mobile')" class="hover:text-[#c78a5c]">FAQ</a>
+        <a href="#cta" @click="isOpen = false" onclick="sa_event('click_cta_navbar_mobile')"
           class="block w-full text-center bg-[#c78a5c] hover:bg-[#7ea1c4] text-white py-2 rounded-lg shadow transition">
           Je réserve mon appel découverte offert
         </a>
@@ -182,7 +182,7 @@
 
           <!-- 🎯 CTA Principal -->
 
-          <a href="#cta"
+          <a href="#cta" onclick="sa_event('click_cta_hero')"
             class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-4 px-8 rounded-lg font-montserrat text-base shadow hover:scale-[1.02] active:scale-[0.98]">
             Je réserve mon appel découverte offert </a>
 
@@ -277,7 +277,7 @@
               enfin</span>. </span>
         </div>
         <div class="mt-8 text-center">
-          <a href="#cta"
+          <a href="#cta" onclick="sa_event('click_cta_probleme')"
             class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-6 rounded-lg text-base shadow hover:scale-[1.03] active:scale-[0.98]">
             😳 Mais… c’est moi ça. Je réserve mon appel découverte offert. </a>
         </div>
@@ -319,7 +319,7 @@
           <!-- 🔘 Bouton émotionnel section "Solution" -->
 
           <div class="mt-8 text-center">
-            <a href="#cta"
+            <a href="#cta" onclick="sa_event('click_cta_solution')"
               class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-6 rounded-lg text-base shadow hover:scale-[1.03] active:scale-[0.98]">
               👏 Wow ! J’ai trouvé mon duo : Je réserve mon appel </a>
           </div>
@@ -400,7 +400,7 @@
         <!-- 🎯 Bouton d’intention post-bénéfices -->
 
         <div class="mt-12">
-          <a href="#cta"
+          <a href="#cta" onclick="sa_event('click_cta_benefices')"
             class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-6 rounded-lg text-base shadow hover:scale-[1.03] active:scale-[0.98]">
             Je veux tout ça. Je réserve mon appel découverte offert </a>
         </div>
@@ -667,7 +667,7 @@
           <!-- QUESTION 1 -->
 
           <div class="border-b border-[#dcd6c9] transition-all duration-500 ease-in-out">
-            <button @click="selected !== 1 ? selected = 1 : selected = null"
+            <button @click="selected !== 1 ? selected = 1 : selected = null" onclick="sa_event('open_faq_q1')"
               class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Est-ce que ça va
               vraiment marcher pour moi ? <span x-text="selected === 1 ? '-' : '+'"></span>
             </button>
@@ -690,7 +690,7 @@
           <!-- QUESTION 2 -->
 
           <div class="border-b border-[#dcd6c9]">
-            <button @click="selected !== 2 ? selected = 2 : selected = null"
+            <button @click="selected !== 2 ? selected = 2 : selected = null" onclick="sa_event('open_faq_q2')"
               class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Et si je ne suis
               pas du tout à l’aise avec les réseaux ? <span x-text="selected === 2 ? '-' : '+'"></span>
             </button>
@@ -713,7 +713,7 @@
           <!-- QUESTION 3 -->
 
           <div class="border-b border-[#dcd6c9]">
-            <button @click="selected !== 3 ? selected = 3 : selected = null"
+            <button @click="selected !== 3 ? selected = 3 : selected = null" onclick="sa_event('open_faq_q3')"
               class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Est-ce que j’aurai
               le temps de suivre l’accompagnement ? <span x-text="selected === 3 ? '-' : '+'"></span>
             </button>
@@ -736,7 +736,7 @@
           <!-- QUESTION 4 -->
 
           <div class="border-b border-[#dcd6c9]">
-            <button @click="selected !== 4 ? selected = 4 : selected = null"
+            <button @click="selected !== 4 ? selected = 4 : selected = null" onclick="sa_event('open_faq_q4')"
               class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Et après les 90
               jours, je fais quoi ? <span x-text="selected === 4 ? '-' : '+'"></span>
             </button>
@@ -759,7 +759,7 @@
           <!-- QUESTION 5 -->
 
           <div class="border-b border-[#dcd6c9]">
-            <button @click="selected !== 5 ? selected = 5 : selected = null"
+            <button @click="selected !== 5 ? selected = 5 : selected = null" onclick="sa_event('open_faq_q5')"
               class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Vous ne proposez
               que cet accompagnement ? <span x-text="selected === 5 ? '-' : '+'"></span>
             </button>
@@ -783,7 +783,7 @@
           <!-- QUESTION 6 -->
 
           <div class="border-b border-[#dcd6c9]">
-            <button @click="selected !== 6 ? selected = 6 : selected = null"
+            <button @click="selected !== 6 ? selected = 6 : selected = null" onclick="sa_event('open_faq_q6')"
               class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Combien ça coûte,
               concrètement ? <span x-text="selected === 6 ? '-' : '+'"></span>
             </button>
@@ -808,7 +808,7 @@
           <!-- QUESTION 7 -->
 
           <div class="border-b border-[#dcd6c9]">
-            <button @click="selected !== 7 ? selected = 7 : selected = null"
+            <button @click="selected !== 7 ? selected = 7 : selected = null" onclick="sa_event('open_faq_q7')"
               class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Pourquoi vous
               plutôt qu’une agence, un salarié ou un alternant ? <span x-text="selected === 7 ? '-' : '+'"></span>
             </button>
@@ -956,14 +956,13 @@
       <div class="flex flex-col gap-2">
         <p class="text-xs uppercase tracking-wider text-[#7ea1c4] mb-2">Contact</p>
         <div class="flex gap-4 mb-1">
-          <a href="https://www.linkedin.com/company/chezparallax" target="_blank"
-            class="hover:text-[#7ea1c4] transition">
+          <a href="https://www.linkedin.com/company/chezparallax" target="_blank" onclick="sa_event('click_social_linkedin')" class="hover:text-[#7ea1c4] transition">
             <i data-lucide="linkedin" class="w-5 h-5"></i>
           </a>
-          <a href="https://www.instagram.com/chezparallax/" target="_blank" class="hover:text-[#c78a5c] transition">
+          <a href="https://www.instagram.com/chezparallax/" target="_blank" onclick="sa_event('click_social_instagram')" class="hover:text-[#c78a5c] transition">
             <i data-lucide="instagram" class="w-5 h-5"></i>
           </a>
-          <a href="https://www.facebook.com/chezparallax" target="_blank" class="hover:text-[#7ea1c4] transition">
+          <a href="https://www.facebook.com/chezparallax" target="_blank" onclick="sa_event('click_social_facebook')" class="hover:text-[#7ea1c4] transition">
             <i data-lucide="facebook" class="w-5 h-5"></i>
           </a>
         </div>
