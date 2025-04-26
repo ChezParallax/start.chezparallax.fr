@@ -169,18 +169,24 @@
     lucide.createIcons();
   </script>
 
-  <script>
-    // Charge dynamiquement le header et le footer
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("/parts/header.html")
-        .then(res => res.text())
-        .then(data => document.getElementById("header").innerHTML = data);
-  
-      fetch("/parts/footer.html")
-        .then(res => res.text())
-        .then(data => document.getElementById("footer").innerHTML = data);
-    });
-  </script>
+<script>
+// Charge dynamiquement le header et le footer
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("/parts/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+        lucide.createIcons(); // Recrée les icônes après avoir injecté le header
+      });
+
+    fetch("/parts/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+        lucide.createIcons(); // Recrée les icônes après avoir injecté le footer
+      });
+  });
+</script>
   
 </body>
 </html>
