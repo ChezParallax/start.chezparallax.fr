@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+
+  <!-- 🧠 MÉTA-INFOS SEO -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Mentions Légales — Parallax">
+  <meta name="author" content="Parallax">
+  <meta name="robots" content="index, follow">
+
+  <!-- SIMPLE ANALYTICS -->
+
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+  <!-- 📱 META SOCIAL -->
+
+  <meta property="og:title" content="Mentions Légales — Parallax">
+  <meta property="og:description"
+    content="Un accompagnement de 90 jours pour transformer vos réseaux sociaux en machine à clients.">
+  <meta property="og:image" content="URL_IMAGE_PARTAGE">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="URL_DE_TA_PAGE">
+
+  <!-- 🔍 FAVICON -->
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 🧠 TITRE -->
+
+  <title>Mentions Légales — Parallax</title>
+
+  <!-- 🎨 TAILWIND CSS -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 💻 POLICES -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Nunito:wght@400;600;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- 💼 ICONS (Lucide) -->
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .match-height {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    @media (min-width: 1024px) {
+      .match-height {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+      }
+    }
+
+    .match-height>div {
+      height: 100%;
+    }
+
+    .match-height img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .scroll-adjust {
+      scroll-margin-top: 320px;
+      /* Valeur par défaut pour mobile */
+    }
+
+    @media (min-width: 1024px) {
+      .scroll-adjust {
+        scroll-margin-top: 70px;
+        /* Valeur desktop (lg:breakpoint) */
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#f5f1e6]">
+
+  <!-- 🔝 HEADER NAVIGATION STICKY -->
+
+  <header x-data="{ isOpen: false }" class="sticky top-0 z-50 bg-white border-b border-[#e2dfd7] backdrop-blur-md">
+    
+    <div id="header"></div>
+
+  </header>
+
+  <main class="max-w-4xl mx-auto py-16 px-6 text-[#25353f] font-nunito">
+    <h1 class="text-3xl font-montserrat font-bold mb-6">Mentions légales</h1>
+    <p class="text-sm text-[#7a7a7a] mb-12">Dernière mise à jour : avril 2025</p>
+
+    <p class="mb-8">Bienvenue sur notre site <strong>start.chezparallax.fr</strong>.<br>En visitant ce site, vous acceptez pleinement et entièrement les présentes mentions légales. Merci de les lire attentivement.</p>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">1. Éditeur du site</h2>
+      <p>Parallax – Thibaud & Zoé<br>Adresse : Sarreguemines, Grand Est, France<br>Email : <a href="mailto:hello@chezparallax.fr" class="text-[#7ea1c4] underline">hello@chezparallax.fr</a><br>Responsables de publication : Thibaud et Zoé Beckrich</p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">2. Hébergement</h2>
+      <p>Le site est hébergé par :</p>
+      <p>GitHub Pages<br>GitHub, Inc.<br>88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis<br><a href="https://pages.github.com/" class="text-[#7ea1c4] underline" target="_blank">https://pages.github.com/</a></p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">3. Propriété intellectuelle</h2>
+      <p>L'ensemble des contenus présents sur le site (textes, images, graphismes, logos, icônes, visuels générés par IA ou issus de banques d'images libres de droit ou premium, etc.) est la propriété exclusive de Parallax, sauf mentions contraires.</p>
+      <p class="mt-4">Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans l'autorisation écrite préalable de Parallax.</p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">4. Données personnelles</h2>
+      <p>Nous collectons certaines données personnelles uniquement dans le cadre de nos formulaires de contact et d'inscription à la newsletter, conformément au RGPD (Règlement Général sur la Protection des Données).</p>
+      <p class="mt-4">Pour plus d’informations, veuillez consulter notre <a href="/politique-confidentialite.html" class="text-[#7ea1c4] underline">Politique de confidentialité</a>.</p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">5. Responsabilité</h2>
+      <p>Nous nous efforçons d'assurer au mieux l'exactitude et la mise à jour des informations diffusées sur notre site. Cependant, nous ne pouvons garantir que toutes les informations sont complètes, précises ou à jour.</p>
+      <p class="mt-4">Parallax ne saurait être tenu responsable des erreurs ou omissions, ni d'une éventuelle indisponibilité du site.</p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">6. Liens hypertextes</h2>
+      <p>Notre site peut contenir des liens vers d’autres sites web. Nous ne sommes pas responsables du contenu ou des pratiques de confidentialité de ces sites tiers.</p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">7. Cookies et tracking</h2>
+      <p>Notre site utilise Simple Analytics pour mesurer son audience de manière totalement anonyme, sans cookies et sans collecte de données personnelles identifiables.</p>
+      <p class="mt-4">Aucun cookie publicitaire n’est déposé sur votre appareil via notre site.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">8. Droit applicable</h2>
+      <p>Le présent site est soumis au droit français. En cas de litige, et après échec de toute tentative de recherche d'une solution amiable, les tribunaux français seront seuls compétents.</p>
+    </section>
+
+    <p class="mt-12">Merci de votre visite !<br><strong>Thibaud & Zoé – Parallax</strong></p>
+  </main>
+  
+
+  <!-- 🡦 FOOTER -->
+
+  <footer class="bg-[#25353f] text-[#f5f1e6] py-12 text-sm">
+    
+    <div id="footer"></div>
+
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <script>
+    // Charge dynamiquement le header et le footer
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("/parts/header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+  
+      fetch("/parts/footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+    });
+  </script>
+  
+</body>
+</html>

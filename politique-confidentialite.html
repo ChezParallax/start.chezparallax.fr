@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+
+  <!-- 🧠 MÉTA-INFOS SEO -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Politique de Confidentialité — Parallax">
+  <meta name="author" content="Parallax">
+  <meta name="robots" content="index, follow">
+
+  <!-- SIMPLE ANALYTICS -->
+
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+  <!-- 📱 META SOCIAL -->
+
+  <meta property="og:title" content="Politique de Confidentialité — Parallax">
+  <meta property="og:description"
+    content="Un accompagnement de 90 jours pour transformer vos réseaux sociaux en machine à clients.">
+  <meta property="og:image" content="URL_IMAGE_PARTAGE">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="URL_DE_TA_PAGE">
+
+    <!-- 🔍 FAVICON -->
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- 🧠 TITRE -->
+  
+    <title>Politique de Confidentialité — Parallax</title>
+  
+    <!-- 🎨 TAILWIND CSS -->
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <!-- 💻 POLICES -->
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Nunito:wght@400;600;800;900&display=swap"
+      rel="stylesheet">
+  
+    <!-- 💼 ICONS (Lucide) -->
+  
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      body {
+        font-family: 'Nunito', sans-serif;
+      }
+  
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: 'Montserrat', sans-serif;
+      }
+  
+      .match-height {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+  
+      @media (min-width: 1024px) {
+        .match-height {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          align-items: stretch;
+        }
+      }
+  
+      .match-height>div {
+        height: 100%;
+      }
+  
+      .match-height img {
+        height: 100%;
+        object-fit: cover;
+      }
+  
+      .scroll-adjust {
+        scroll-margin-top: 320px;
+        /* Valeur par défaut pour mobile */
+      }
+  
+      @media (min-width: 1024px) {
+        .scroll-adjust {
+          scroll-margin-top: 70px;
+          /* Valeur desktop (lg:breakpoint) */
+        }
+      }
+    </style>
+</head>
+<body class="bg-[#f5f1e6]">
+
+  <!-- 🔝 HEADER NAVIGATION STICKY -->
+
+  <header x-data="{ isOpen: false }" class="sticky top-0 z-50 bg-white border-b border-[#e2dfd7] backdrop-blur-md">
+
+    <div id="header"></div>
+
+  </header>
+
+  <main class="max-w-4xl mx-auto py-16 px-6 text-[#25353f] font-nunito">
+    <h1 class="text-3xl font-montserrat font-bold mb-6">Politique de confidentialité</h1>
+    <p class="text-sm text-[#7a7a7a] mb-12">Dernière mise à jour : avril 2025</p>
+  
+    <p class="mb-8">Bienvenue sur notre site <strong>start.chezparallax.fr</strong>.<br>
+    Chez Parallax, nous attachons une grande importance à la confidentialité et à la protection de vos données personnelles. Cette politique vise à vous expliquer de manière simple et transparente comment nous collectons, utilisons et protégeons vos informations.</p>
+  
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">1. Responsable du traitement</h2>
+      <p>Le responsable du traitement des données est :</p>
+      <p>Parallax – Thibaud & Zoé<br>Email : <a href="mailto:hello@chezparallax.fr" class="text-[#7ea1c4] underline">hello@chezparallax.fr</a><br>Adresse : Sarreguemines, Grand Est, France</p>
+    </section>
+  
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">2. Données collectées</h2>
+      <p>Nous collectons uniquement les informations nécessaires pour vous envoyer :</p>
+      <ul class="list-disc pl-6 mt-4">
+        <li>Nos ressources gratuites (freebies, kits, guides)</li>
+        <li>Nos newsletters hebdomadaires</li>
+        <li>Des emails ponctuels liés à nos offres et contenus</li>
+      </ul>
+      <p class="mt-4">Les données collectées via nos formulaires sont :</p>
+      <ul class="list-disc pl-6 mt-4">
+        <li>Votre prénom (facultatif)</li>
+        <li>Votre adresse email (obligatoire)</li>
+      </ul>
+      <p class="mt-4">Lors de votre navigation, nous utilisons également des statistiques anonymes pour améliorer votre expérience (voir section 5).</p>
+    </section>
+  
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">3. Finalité de la collecte</h2>
+      <p>Vos données sont utilisées exclusivement pour :</p>
+      <ul class="list-disc pl-6 mt-4">
+        <li>Vous envoyer les ressources que vous avez demandées</li>
+        <li>Vous envoyer nos emails de bienvenue et newsletters</li>
+        <li>Vous informer de nos nouveaux contenus, services ou offres</li>
+        <li>Mesurer l’audience et l’efficacité de nos communications</li>
+      </ul>
+      <p class="mt-4">Nous ne vendons, louons ou partageons jamais vos données personnelles avec des tiers.</p>
+    </section>
+  
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">4. Consentement et droit de retrait</h2>
+      <p>En remplissant un formulaire et en validant votre inscription, vous consentez explicitement à recevoir nos emails.</p>
+      <p class="mt-4">Vous pouvez retirer votre consentement à tout moment via le lien de désinscription présent dans chaque email ou en nous écrivant à <a href="mailto:hello@chezparallax.fr" class="text-[#7ea1c4] underline">hello@chezparallax.fr</a>.</p>
+    </section>
+  
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">5. Outils tiers utilisés</h2>
+      <ul class="list-disc pl-6">
+        <li>MailerLite : pour la gestion de nos emails et newsletters. <a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank" class="text-[#7ea1c4] underline">Politique de confidentialité MailerLite</a>.</li>
+        <li>Simple Analytics : pour l’analyse anonyme de l'audience. <a href="https://simpleanalytics.com/privacy-policy" target="_blank" class="text-[#7ea1c4] underline">Politique de confidentialité Simple Analytics</a>.</li>
+      </ul>
+    </section>
+  
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">6. Durée de conservation</h2>
+      <p>Vos données sont conservées tant que vous êtes inscrit(e) à notre newsletter, ou jusqu'à votre demande de suppression.</p>
+      <p class="mt-4">En cas de désinscription, vos données sont supprimées dans un délai raisonnable.</p>
+    </section>
+  
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">7. Sécurité de vos données</h2>
+      <p>Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger vos données contre tout accès non autorisé, perte, destruction ou divulgation.</p>
+    </section>
+  
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">8. Vos droits</h2>
+      <p>Conformément au RGPD, vous disposez de droits d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité de vos données.</p>
+      <p class="mt-4">Pour exercer vos droits, contactez-nous à <a href="mailto:hello@chezparallax.fr" class="text-[#7ea1c4] underline">hello@chezparallax.fr</a>. Nous répondrons sous un mois maximum.</p>
+    </section>
+  
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">9. Modifications de la politique</h2>
+      <p>Nous nous réservons le droit de modifier cette politique à tout moment. La version la plus récente sera toujours disponible sur cette page.</p>
+    </section>
+  
+    <p class="mt-12">Merci pour votre confiance !<br><strong>Thibaud & Zoé – Parallax</strong></p>
+  </main>
+
+  <!-- 🡦 FOOTER -->
+
+  <footer class="bg-[#25353f] text-[#f5f1e6] py-12 text-sm">
+    
+    <div id="footer"></div>
+
+  </footer>
+  <script>
+    lucide.createIcons();
+  </script>
+
+    <script>
+      // Charge dynamiquement le header et le footer
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/parts/header.html")
+          .then(res => res.text())
+          .then(data => document.getElementById("header").innerHTML = data);
+    
+        fetch("/parts/footer.html")
+          .then(res => res.text())
+          .then(data => document.getElementById("footer").innerHTML = data);
+      });
+    </script>
+
+</body>
+</html>
