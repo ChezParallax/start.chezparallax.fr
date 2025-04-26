@@ -1,1 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter — Parallax</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Nunito&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background-color: #f5f1e6;
+      color: #25353f;
+    }
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 40px 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 0.25rem;
+    }
+    p.subtitle {
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+    .section {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .section ul li {
+      margin-bottom: 0.5rem;
+    }
+    .checkmark {
+      color: #1a9c4b;
+      margin-right: 0.5rem;
+    }
+    form {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    input {
+      padding: 0.75rem;
+      border: 1px solid #ddd6cb;
+      border-radius: 8px;
+      background-color: #f9f8f5;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      background-color: #7ea1c4;
+      color: white;
+      font-weight: 600;
+      padding: 12px 32px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: all 0.2s ease-in-out;
+    }
+    button:hover {
+      background-color: #c78a5c;
+      transform: scale(1.03);
+    }
+    button:active {
+      transform: scale(0.98);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 2rem;
+      color: #7a7a7a;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .social-icons a {
+      transition: color 0.2s;
+    }
+    .social-icons a[data-network="linkedin"] {
+      color: #25353f;
+    }
+    .social-icons a[data-network="linkedin"]:hover {
+      color: #7ea1c4;
+    }
+    .social-icons a[data-network="instagram"] {
+      color: #25353f;
+    }
+    .social-icons a[data-network="instagram"]:hover {
+      color: #c78a5c;
+    }
+    .social-icons a[data-network="facebook"] {
+      color: #25353f;
+    }
+    .social-icons a[data-network="facebook"]:hover {
+      color: #7ea1c4;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 24px auto;
+      max-width: 120px;
+    }
+    .success-message, .error-message {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 12px;
+      font-family: 'Nunito', sans-serif;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .success-message.show, .error-message.show {
+      display: block;
+      opacity: 1;
+    }
+    .success-message {
+      background-color: #e6f5ec;
+      color: #2d6a4f;
+      border: 1px solid #b7e4c7;
+    }
+    .error-message {
+      background-color: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="https://start.chezparallax.fr/assets/svg/logo-parallax-v.svg" alt="Logo Parallax" class="logo">
+    <h1>La newsletter pour reprendre la main sur tes réseaux</h1>
+    <br>
+    <p class="subtitle">📬 Tu veux des contenus courts, utiles et activables<br>sans t’épuiser à tout faire toi-même ?</p>
+
+    <div class="section">
+      <p>👉 Tu recevras <strong>4 emails la première semaine</strong> pour te souhaiter la bienvenue, puis <strong>1 fois par semaine maximum</strong>.</p>
+      <p>Tu y trouveras notamment :</p>
+      <ul>
+        <li><span class="checkmark">✅</span>Des idées concrètes pour tes contenus</li>
+        <li><span class="checkmark">✅</span>Des outils qui font gagner du temps</li>
+        <li><span class="checkmark">✅</span>Des cas concrets ou mini retours d’expérience</li>
+        <li><span class="checkmark">✅</span>Des freebies en avant-première</li>
+        <li><span class="checkmark">✅</span>Des tutos inspirés de vos demandes sur Instagram</li>
+        <li><span class="checkmark">✅</span>Le conseil ChatGPT de la semaine (et comment t’en servir)</li>
+      </ul>
+    </div>
+
+    <form action="https://assets.mailerlite.com/jsonp/1452538/forms/152696883128567149/subscribe" method="post" onsubmit="submitMailerLite(event)">
+      <input type="text" name="fields[name]" placeholder="Ton prénom" required>
+      <input type="email" name="fields[email]" placeholder="Ton email" required>
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <button type="submit">📘 Je m’abonne à la Newsletter</button>
+      <p style="font-size: 0.75rem; color: #555; text-align: center;">
+        En t’inscrivant, tu consens à recevoir nos emails. Tu pourras te désinscrire à tout moment.
+        Tes données ne seront jamais partagées. <a href="/politique-confidentialite.html" target="_blank" style="color: #7ea1c4;">Voir notre politique de confidentialité</a>.
+      </p>
+    </form>
+
+    <div id="confirmation-message" class="success-message">
+      <h3>🎉 C'est bon !</h3>
+      <p>Ton inscription est confirmée 🚀<br>Regarde dans ta boîte mail dans les 2 prochaines minutes (et pense aux spams 👀).</p>
+    </div>
+
+    <div id="error-message" class="error-message">
+      <h3>⚠️ Oups, une erreur est survenue.</h3>
+      <p>Vérifie ton email ou réessaye dans quelques instants.</p>
+      <p class="text-sm">Si le problème persiste, écris-nous à <a href="mailto:hello@chezparallax.fr">hello@chezparallax.fr</a>.</p>
+    </div>
+
+    <footer>
+      <p>Tu peux aussi nous retrouver ici :</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/chezparallax" target="_blank" data-network="linkedin"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+        <a href="https://www.instagram.com/chezparallax/" target="_blank" data-network="instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <a href="https://www.facebook.com/chezparallax" target="_blank" data-network="facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function submitMailerLite(event) {
+      event.preventDefault();
+      const form = event.target;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        mode: 'no-cors'
+      }).then(() => {
+        document.getElementById('confirmation-message').classList.add('show');
+        document.getElementById('error-message').classList.remove('show');
+      }).catch(() => {
+        document.getElementById('error-message').classList.add('show');
+        document.getElementById('confirmation-message').classList.remove('show');
+      });
+    }
+  </script>
+</body>
+</html>
 
