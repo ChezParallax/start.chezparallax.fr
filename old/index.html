@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+
+  <!-- 🧠 MÉTA-INFOS SEO -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Accompagnement social media sur 90 jours : stratégie, contenu, déploiement. Transformez vos réseaux sociaux en levier business.">
+  <meta name="author" content="Parallax">
+  <meta name="robots" content="index, follow">
+
+  <!-- SIMPLE ANALYTICS -->
+
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+  <!-- 📱 META SOCIAL -->
+
+  <meta property="og:title" content="Parallax — Stratégie réseaux sociaux 360°">
+  <meta property="og:description"
+    content="Un accompagnement de 90 jours pour transformer vos réseaux sociaux en machine à clients.">
+  <meta property="og:image" content="URL_IMAGE_PARTAGE">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="URL_DE_TA_PAGE">
+
+  <!-- 🔍 FAVICON -->
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- 🧠 TITRE -->
+
+  <title>Parallax — Réseaux sociaux au service de votre business</title>
+
+  <!-- 🎨 TAILWIND CSS -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 💻 POLICES -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Nunito:wght@400;600;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- 💼 ICONS (Lucide) -->
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .match-height {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    @media (min-width: 1024px) {
+      .match-height {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+      }
+    }
+
+    .match-height>div {
+      height: 100%;
+    }
+
+    .match-height img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .scroll-adjust {
+      scroll-margin-top: 320px;
+      /* Valeur par défaut pour mobile */
+    }
+
+    @media (min-width: 1024px) {
+      .scroll-adjust {
+        scroll-margin-top: 70px;
+        /* Valeur desktop (lg:breakpoint) */
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#f5f1e6] text-[#25353f]">
+
+  <!-- 🔝 HEADER NAVIGATION STICKY -->
+
+  <header x-data="{ isOpen: false }" class="sticky top-0 z-50 bg-white border-b border-[#e2dfd7] backdrop-blur-md">
+    <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 sm:px-6 lg:px-0">
+
+
+      <!-- LOGO (à gauche) -->
+      <a href="#" onclick="sa_event('click_nav_home')" class="flex items-center gap-2 shrink-0">
+        <img src="https://i.imgur.com/o7HP7dp.png" alt="Logo Parallax" class="h-8 w-auto">
+      </a>
+
+      <!-- NAVIGATION (au centre) -->
+      <nav class="hidden md:flex items-center gap-6 font-semibold text-sm mx-auto">
+        <a href="#solution" onclick="sa_event('click_nav_solution_desktop')" class="hover:text-[#c78a5c] transition">Parallax ?</a>
+        <a href="#benefices" onclick="sa_event('click_nav_benefices_desktop')" class="hover:text-[#c78a5c] transition">Ce qu’on vous apporte</a>
+        <a href="#plan" onclick="sa_event('click_nav_plan_desktop')" class="hover:text-[#c78a5c] transition">Le déroulé</a>
+        <a href="#temoignages" onclick="sa_event('click_nav_temoignages_desktop')" class="hover:text-[#c78a5c] transition">Ils en parlent</a>
+        <!-- <a href="#leadmagnet" onclick="sa_event('click_nav_leadmagnet_desktop')" class="hover:text-[#c78a5c] transition">🎁 Bonus</a> -->
+        <a href="#faq" onclick="sa_event('click_nav_faq_desktop')" class="hover:text-[#c78a5c] transition">FAQ</a>
+      </nav>
+
+      <!-- CTA (à droite) -->
+      <div class="flex items-center gap-4 shrink-0">
+        <a href="#cta" onclick="sa_event('click_cta_navbar_desktop')"
+          class="hidden md:inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-2.5 px-5 rounded-lg text-sm shadow hover:scale-[1.03] active:scale-[0.98]">
+          Je réserve mon appel découverte
+        </a>
+
+        <!-- MENU BURGER MOBILE -->
+        <button @click="isOpen = !isOpen" onclick="sa_event('click_nav_burger')" class="md:hidden" aria-label="Ouvrir le menu">
+          <i data-lucide="menu" class="w-6 h-6 stroke-2"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- MENU MOBILE -->
+    <div x-show="isOpen" x-transition class="md:hidden px-6 pb-6">
+      <nav class="flex flex-col gap-4 font-semibold text-sm pt-4 text-[#25353f]">
+        <a href="#solution" @click="isOpen = false" onclick="sa_event('click_nav_solution_mobile')" class="hover:text-[#c78a5c]">Parallax ?</a>
+        <a href="#benefices" @click="isOpen = false" onclick="sa_event('click_nav_benefices_mobile')" class="hover:text-[#c78a5c]">Ce qu’on vous apporte</a>
+        <a href="#plan" @click="isOpen = false" onclick="sa_event('click_nav_plan_mobile')" class="hover:text-[#c78a5c]">Le déroulé</a>
+        <a href="#temoignages" @click="isOpen = false" onclick="sa_event('click_nav_temoignages_mobile')" class="hover:text-[#c78a5c]">Ils en parlent</a>
+        <!-- <a href="#leadmagnet" @click="isOpen = false" onclick="sa_event('click_nav_leadmagnet_mobile')" class="hover:text-[#c78a5c]">🎁 Bonus</a> -->
+        <a href="#faq" @click="isOpen = false" onclick="sa_event('click_nav_faq_mobile')" class="hover:text-[#c78a5c]">FAQ</a>
+        <a href="#cta" @click="isOpen = false" onclick="sa_event('click_cta_navbar_mobile')"
+          class="block w-full text-center bg-[#c78a5c] hover:bg-[#7ea1c4] text-white py-2 rounded-lg shadow transition">
+          Je réserve mon appel découverte offert
+        </a>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <!-- 🌍 CORPS DE PAGE -->
+
+  <main>
+
+    <!-- 🦸 HERO SECTION -->
+
+    <section class="scroll-adjust bg-[#f5f1e6] text-[#25353f] pt-12 pb-24 px-6 lg:px-12">
+      <div class="max-w-6xl mx-auto match-height gap-12 grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+
+        <!-- ⬅️ Colonne gauche : Texte, CTA, Preuve sociale -->
+
+        <div class="lg:col-span-3">
+
+          <!-- 👋 Eyebrow -->
+
+          <p class="text-sm lg:text-base text-[#25353f] font-semibold mb-3 tracking-wide">
+            👋 Hey, les entrepreneurs débordés…
+          </p>
+          <h1 class="text-4xl lh:2 lg:text-5xl font-extrabold font-montserrat leading-tight mb-6"> Et si vos réseaux
+            vous apportaient enfin <br>
+            <span class="inline-block bg-[#c78a5c] px-1 rounded">les bons clients</span>, <br> sans y perdre vos <span
+              class="text-[#7ea1c4]">soirées</span> ou votre <span class="text-[#c78a5c]">
+              <u>énergie</u>
+            </span> ? </span>
+          </h1>
+          <p class="text-md font-nunito mb-8 max-w-xl"> Vous n’êtes pas censé passer vos journées à <span
+              class="font-bold">courir après les algorithmes</span>. <br>
+            <br> Pendant <span class="font-bold text-[#c78a5c]">90 jours</span>, on prend en main vos réseaux :
+            stratégie claire, contenus professionnels, visibilité utile. <br>
+            <br> Vous restez focus sur votre activité — pendant que vos réseaux attirent <span class="font-bold">les
+              bons clients</span> à votre place.
+          </p>
+
+          <!-- 🎯 CTA Principal -->
+
+          <a href="#cta" onclick="sa_event('click_cta_hero')"
+            class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-4 px-8 rounded-lg font-montserrat text-base shadow hover:scale-[1.02] active:scale-[0.98]">
+            Je réserve mon appel découverte offert </a>
+
+          <!-- ⭐ Preuve sociale stylisée -->
+
+          <div class="mt-8 flex items-center gap-4">
+
+            <!-- 👥 Avatars clients superposés -->
+
+            <div class="flex -space-x-4">
+              <img src="https://i.imgur.com/W9h2pC6.png" alt="Client 1"
+                class="w-10 h-10 rounded-full border-2 border-white object-cover">
+              <img src="https://i.imgur.com/kjdjs4y.png" alt="Client 2"
+                class="w-10 h-10 rounded-full border-2 border-white object-cover">
+              <img src="https://i.imgur.com/3uEdDtL.png" alt="Client 3"
+                class="w-10 h-10 rounded-full border-2 border-white object-cover">
+              <img src="https://i.imgur.com/lgKFsNr.png" alt="Client 4"
+                class="w-10 h-10 rounded-full border-2 border-white object-cover">
+              <img src="https://i.imgur.com/ldR3xg6.png" alt="Client 5"
+                class="w-10 h-10 rounded-full border-2 border-white object-cover">
+              <img src="https://i.imgur.com/MKYjICV.png" alt="Client 6"
+                class="w-10 h-10 rounded-full border-2 border-white object-cover">
+            </div>
+
+            <!-- 📣 Texte avec étoiles lisibles -->
+
+            <div class="flex items-center gap-1 text-sm font-semibold font-nunito text-[#25353f] ml-2">
+              <span class="inline-block bg-white border border-[#d6d3cc] rounded-full px-1.5">⭐⭐⭐⭐⭐</span>
+              <span class="ml-1">+10 entrepreneurs soulagés</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ➡️ Colonne droite : Image de transformation -->
+
+        <div class="flex justify-center lg:col-span-2">
+          <img
+            src="https://media.istockphoto.com/id/1609592194/fr/photo/adolescente-afro-am%C3%A9ricaine-utilisant-un-smartphone-ordinateur-portable-avec-le-r%C3%A9seau-de.jpg?s=2048x2048&w=is&k=20&c=DxqowYdgxF4E23Kt7f80SPKDtUvNWn8kf-u7p8Kh2E4="
+            alt="Client après transformation" class="rounded-2xl shadow-xl w-full max-w-md lg:max-w-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- 🚨 SECTION PROBLÈME -->
+
+    <section id="probleme" class="scroll-adjust bg-white text-[#25353f] py-24 px-6 lg:px-12">
+      <div class="max-w-4xl mx-auto text-center">
+
+        <!-- 🎯 Titre -->
+
+        <h2 class="text-3xl lg:text-4xl font-extrabold font-montserrat mb-12 leading-tight"> Vous jonglez déjà avec
+          <span class="text-[#c78a5c] font-extrabold">1000 choses</span>. <br> Et pourtant, on attend de vous d’être
+          aussi <span class="text-[#c78a5c] font-extrabold">stratège</span> et <span
+            class="text-[#7ea1c4] font-extrabold">créateur de contenu</span>.
+        </h2>
+
+        <!-- 🟠 Liste de symptômes avec icône -->
+
+        <div class="max-w-xl mx-auto text-left">
+          <ul class="space-y-5 text-lg font-nunito">
+            <li class="flex items-start gap-3 leading-relaxed">
+              <i class="w-6 h-6 mt-1 text-[#c78a5c] shrink-0" data-lucide="x-circle"></i>
+              <p class="m-0">Vous publiez <span class="font-extrabold">à la dernière minute</span>, sans savoir si ça a
+                un impact. </p>
+            </li>
+            <li class="flex items-start gap-3 leading-relaxed">
+              <i class="w-6 h-6 mt-1 text-[#c78a5c] shrink-0" data-lucide="x-circle"></i>
+              <p class="m-0">Vous avez l’impression de <span class="font-extrabold">parler dans le vide</span>… ou de
+                <span class="font-extrabold">tourner en rond</span>.
+              </p>
+            </li>
+            <li class="flex items-start gap-3 leading-relaxed">
+              <i class="w-6 h-6 mt-1 text-[#c78a5c] shrink-0" data-lucide="x-circle"></i>
+              <p class="m-0">Votre image ne reflète pas <span class="font-extrabold">le sérieux</span> de ce que vous
+                proposez. </p>
+            </li>
+            <li class="flex items-start gap-3 leading-relaxed">
+              <i class="w-6 h-6 mt-1 text-[#c78a5c] shrink-0" data-lucide="x-circle"></i>
+              <p class="m-0">Vous êtes <span class="font-extrabold">seul face aux algos</span>, aux commentaires, au
+                manque de temps. </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 💬 Bloc info empathique -->
+
+        <div
+          class="bg-[#f5f1e6] mt-12 px-6 py-5 rounded-xl border border-[#e0ddd7] text-base font-nunito max-w-2xl mx-auto text-[#25353f] leading-relaxed">
+          Vous n’êtes pas censé tout savoir faire seul. <br /> Les réseaux exigent une clarté, une énergie, une rigueur
+          que personne ne peut maintenir en mode pilote automatique. <br />
+          <span class="italic">C’est là qu’on entre en scène — <span class="font-extrabold">pour que vos efforts payent,
+              enfin</span>. </span>
+        </div>
+        <div class="mt-8 text-center">
+          <a href="#cta" onclick="sa_event('click_cta_probleme')"
+            class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-6 rounded-lg text-base shadow hover:scale-[1.03] active:scale-[0.98]">
+            😳 Mais… c’est moi ça. Je réserve mon appel découverte offert. </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🧭 SECTION SOLUTION -->
+
+    <section id="solution" class="scroll-adjust bg-[#f5f1e6] text-[#25353f] pt-12 pb-24 px-6 lg:px-12">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+
+        <!-- 🧠 Texte à gauche -->
+
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-extrabold font-montserrat mb-6"> Deux regards, une vision : <br /> faire
+            de vos réseaux un véritable <span class="text-[#c78a5c] font-extrabold">moteur pour votre activité</span>.
+          </h2>
+          <p class="text-lg font-nunito mb-6"> Nous, c’est Thibaud et Zoé Beckrich. Frère et sœur, duo stratégique et
+            créatif. <br /> Depuis plus de <span class="font-semibold">10 ans</span>, on aide les entreprises à <span
+              class="font-extrabold">reprendre le contrôle sur leurs réseaux</span> pour construire <span
+              class="font-extrabold">une communication claire, alignée et qui fait avancer leur activité</span>. </p>
+          <p class="text-lg font-nunito mb-6"> On a vu des projets brillants échouer — non par manque d’idée, mais par
+            absence de <span class="font-semibold">vision, méthode, ou cohérence de marque</span>. C’est précisément ce
+            qu’on refuse. </p>
+          <p class="text-lg font-nunito mb-6"> Notre force ? Un <span class="font-extrabold text-[#7ea1c4]">regard
+              croisé</span> constant : stratégie, contenu, analyse. <br /> Une <span class="font-extrabold">vision
+              complète</span>, à la fois stratégique, créative et ancrée dans la réalité du terrain. </p>
+          <p class="text-lg font-nunito mb-6"> On accompagne peu de clients à la fois — mais à fond, avec une
+            conviction : <br /> votre communication ne doit jamais trahir <span class="font-extrabold">qui vous
+              êtes</span>, ni <span class="font-extrabold">ce que vous vendez</span>. </p>
+
+          <!-- Bloc citation -->
+
+          <div class="bg-white border-l-4 border-[#c78a5c] p-5 text-base font-nunito shadow-sm rounded-r-md italic">
+            Notre rôle, ce n’est pas juste de “gérer vos réseaux”. <br /> C’est de prendre en main votre communication
+            avec exigence, respect et clarté. <br /> Pour que vous sachiez <span class="font-extrabold">où vous allez,
+              et pourquoi</span>. </div>
+
+          <!-- 🔘 Bouton émotionnel section "Solution" -->
+
+          <div class="mt-8 text-center">
+            <a href="#cta" onclick="sa_event('click_cta_solution')"
+              class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-6 rounded-lg text-base shadow hover:scale-[1.03] active:scale-[0.98]">
+              👏 Wow ! J’ai trouvé mon duo : Je réserve mon appel </a>
+          </div>
+        </div>
+
+        <!-- 👁 Visuel équipe -->
+
+        <div class="flex justify-center">
+          <img
+            src="https://sdmntpritalynorth.oaiusercontent.com/files/00000000-0428-6246-8861-5a6357d106e0/raw?se=2025-04-25T00%3A02%3A06Z&sp=r&sv=2024-08-04&sr=b&scid=97ff61c4-a24f-5411-9b68-67dec6585982&skoid=54ae6e2b-352e-4235-bc96-afa2512cc978&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-24T11%3A15%3A29Z&ske=2025-04-25T11%3A15%3A29Z&sks=b&skv=2024-08-04&sig=9RAADHhylL5TMYK8rFEULtJN2vxSsSTwm9bJ%2BEtPsFQ%3D"
+            alt="Thibaud et Zoé Beckrich" class="w-full max-w-md lg:max-w-full object-cover">
+
+          <!-- Remplace ce visuel par ton duo en bonne qualité -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 🎁 SECTION BÉNÉFICES -->
+
+    <section id="benefices" class="scroll-adjust bg-[#f0f4f9] text-[#25353f] py-24 px-6 lg:px-12">
+      <div class="max-w-6xl mx-auto text-center">
+
+        <!-- 🎯 Titre principal -->
+
+        <h2 class="text-3xl lg:text-4xl font-extrabold font-montserrat mb-16 leading-tight"> Ce que ça change, <span
+            class="text-[#c78a5c]">pour de vrai</span>. </h2>
+
+        <!-- 📦 Carte contenant les 3 bénéfices -->
+
+        <div class="bg-white rounded-2xl shadow-lg p-10 md:p-14">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+
+            <!-- 🔹 Bénéfice 1 -->
+
+            <div class="flex flex-col items-center ">
+              <div class="bg-[#7ea1c4] p-4 rounded-full mb-6">
+                <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+              </div>
+              <h3 class="text-xl font-extrabold mb-2 font-montserrat"> Du temps en plus, <br>
+                <span class="text-[#7ea1c4]">sans la charge mentale</span>.
+              </h3>
+              <p class="text-base font-nunito leading-relaxed"> Vous ne publiez plus <span class="font-bold">dans
+                  l’urgence</span>. <br> On gère vos réseaux — <span class="font-bold">vous reprenez le contrôle</span>
+                sur vos journées. </p>
+            </div>
+
+            <!-- 🔹 Bénéfice 2 -->
+
+            <div class="flex flex-col items-center">
+              <div class="bg-[#c78a5c] p-4 rounded-full mb-6">
+                <i data-lucide="megaphone" class="w-6 h-6 text-white"></i>
+              </div>
+              <h3 class="text-xl font-extrabold mb-2 font-montserrat"> Une image pro, <br>
+                <span class="text-[#c78a5c]">fidèle à qui vous êtes</span>.
+              </h3>
+              <p class="text-base font-nunito leading-relaxed"> Votre communication reflète enfin <span
+                  class="font-bold">votre niveau de service</span>, vos valeurs, votre ton. <br> Bref&nbsp;: c’est <span
+                  class="font-bold">cohérent</span>, et ça <span class="font-bold">vous ressemble</span>. </p>
+            </div>
+
+            <!-- 🔹 Bénéfice 3 -->
+
+            <div class="flex flex-col items-center">
+              <div class="bg-[#7ea1c4] p-4 rounded-full mb-6">
+                <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+              </div>
+              <h3 class="text-xl font-extrabold mb-2 font-montserrat"> Des résultats visibles, <br>
+                <span class="text-[#7ea1c4]">pas juste des likes</span>.
+              </h3>
+              <p class="text-base font-nunito leading-relaxed"> Plus d’engagement, plus de messages, <span
+                  class="font-bold">plus de clients</span>&nbsp;: <br> vos réseaux deviennent enfin <span
+                  class="font-bold">un vrai levier business</span>. </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🎯 Bouton d’intention post-bénéfices -->
+
+        <div class="mt-12">
+          <a href="#cta" onclick="sa_event('click_cta_benefices')"
+            class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-6 rounded-lg text-base shadow hover:scale-[1.03] active:scale-[0.98]">
+            Je veux tout ça. Je réserve mon appel découverte offert </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🛠️ SECTION PLAN D’ACTION -->
+
+    <section id="plan" class="scroll-adjust bg-white text-[#25353f] py-24 px-6 lg:px-12">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 items-start gap-16">
+
+          <!-- Colonne gauche -->
+
+          <div class="space-y-12">
+            <h2 class="text-3xl lg:text-4xl font-bold font-montserrat mb-6"> Comment ça se passe <span
+                class="text-[#7ea1c4]">concrètement&nbsp;?</span>
+            </h2>
+
+            <!-- Étape 1 -->
+
+            <div>
+              <div class="text-[#7ea1c4] text-3xl font-bold font-montserrat mb-1">01</div>
+              <h3 class="text-xl font-bold mb-2 font-montserrat"> Réservez votre appel découverte </h3>
+              <p class="text-base font-nunito leading-relaxed"> On discute gratuitement de votre <span
+                  class="font-bold text-[#7ea1c4]">présence en ligne</span>, de ce qui coince et de ce que vous visez.
+                <br /> C’est <span class="text-[#c78a5c] font-semibold">sans engagement</span>, mais ça <span
+                  class="font-bold">pose enfin les bases</span>.
+              </p>
+            </div>
+
+            <!-- Étape 2 -->
+
+            <div>
+              <div class="text-[#c78a5c] text-3xl font-bold font-montserrat mb-1">02</div>
+              <h3 class="text-xl font-bold mb-2 font-montserrat"> On construit (et déploie) votre stratégie </h3>
+              <p class="text-base font-nunito leading-relaxed"> Pendant 90 jours, on prend <span
+                  class="text-[#7ea1c4] font-semibold">les rênes de vos réseaux</span> : stratégie, contenus,
+                publications, interactions. <br />
+                <span class="font-bold">Vous validez</span>, on avance. <em>Ensemble.</em>
+              </p>
+            </div>
+
+            <!-- Étape 3 -->
+
+            <div>
+              <div class="text-[#7ea1c4] text-3xl font-bold font-montserrat mb-1">03</div>
+              <h3 class="text-xl font-bold mb-2 font-montserrat"> Vos réseaux bossent (enfin) pour vous </h3>
+              <p class="text-base font-nunito leading-relaxed"> Moins de <span class="font-semibold">charge
+                  mentale</span>, plus de <span class="font-semibold">clarté</span>, plus de <span
+                  class="font-semibold">clients</span>. <br /> Votre communication devient <span
+                  class="text-[#c78a5c] font-semibold">un outil qui sert vraiment votre activité</span>. </p>
+            </div>
+          </div>
+
+          <!-- Colonne droite -->
+
+          <div class="h-full">
+            <img
+              src="https://media.istockphoto.com/id/1412148116/fr/photo/organigramme-datteinte-des-objectifs-commerciaux-de-flux-de-travail-et-dautomatisation-des.jpg?s=2048x2048&w=is&k=20&c=08iwgw3cxpn0-KkFsNhR9Ms5K4NbTR9iMHGuY9bL0OE="
+              alt="Schéma de stratégie social media" class="rounded-2xl shadow-xl w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🌟 SECTION TÉMOIGNAGES -->
+
+    <section id="temoignages" class="scroll-adjust bg-[#25353f] text-[#f5f1e6] py-24 px-6 lg:px-12">
+      <div class="max-w-6xl mx-auto">
+
+        <!-- 🎯 Titre principal -->
+
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold font-montserrat mb-4"> Ils ont arrêté de <span
+              class="text-[#c78a5c]">subir</span> leurs réseaux. </h2>
+          <p class="text-base font-nunito text-[#d8d8d8]"> Ils avaient la tête sous l’eau. Aujourd’hui, leurs réseaux
+            tournent, et leurs clients arrivent. </p>
+        </div>
+
+        <!-- 🧹 Grille asymétrique -->
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
+          <!-- 💬 Témoignage HÉRO -->
+
+          <div class="h-full flex flex-col justify-between">
+
+            <!-- 💬 Témoignage HÉRO -->
+
+            <div class="h-full flex flex-col justify-between">
+              <div class="flex items-center h-full">
+                <div
+                  class="bg-[#36424d] border border-[#3f4a55] hover:shadow-2xl transition-shadow duration-300 ease-in-out border-l-4 border-l-[#c78a5c] p-6 rounded-2xl shadow-lg text-left w-full h-full flex flex-col">
+
+                  <!-- Titre fixe en haut -->
+
+                  <div class="mb-4">
+                    <p class="text-3xl font-extrabold text-[#c78a5c] uppercase">+300% de leads en 2 mois</p>
+                  </div>
+
+                  <!-- Texte centré entre titre et signature -->
+
+                  <div class="flex-grow flex flex-col justify-center">
+                    <p class="text-lg font-nunito italic leading-relaxed mb-4"> “Avant, je postais quand j’avais le
+                      temps. C’était stressant, brouillon… et inutile.” </p>
+                    <p class="text-lg font-nunito italic leading-relaxed mb-4"> “Avec Thibaud et Zoé, j’ai posé une
+                      vraie stratégie. Je sais quoi dire, quand, et pourquoi. Aujourd’hui, je reçois des messages chaque
+                      semaine de clients vraiment intéressés.” </p>
+                    <p class="text-sm text-[#c2c2c2]">Avant : 1 message / mois → Après : 3 à 5 demandes qualifiées par
+                      semaines</p>
+                  </div>
+
+                  <!-- Signature toujours en bas -->
+
+                  <div class="flex items-center gap-3 mt-6">
+                    <img src="https://i.imgur.com/3uEdDtL.png" alt="Julie D."
+                      class="w-12 h-12 rounded-full border-2 border-white object-cover">
+                    <div>
+                      <p class="font-bold">Julie D.</p>
+                      <p class="text-sm text-[#c2c2c2]">Coach business</p>
+                      <p class="text-xs text-[#fcd34d] mt-1">⭐⭐⭐⭐⭐</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 🔗 Bloc avatars clients + badge (option 2 avec fond orange 50%) -->
+
+            <div
+              class="mt-8 bg-[#c78a5c]/40 border border-[#edd3be]/20 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center flex flex-col justify-between">
+              <div class="flex items-center gap-4 justify-center flex-wrap text-center">
+                <div class="flex -space-x-4">
+                  <img src="https://i.imgur.com/W9h2pC6.png"
+                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  <img src="https://i.imgur.com/kjdjs4y.png"
+                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  <img src="https://i.imgur.com/3uEdDtL.png"
+                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  <img src="https://i.imgur.com/lgKFsNr.png"
+                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  <img src="https://i.imgur.com/ldR3xg6.png"
+                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  <img src="https://i.imgur.com/MKYjICV.png"
+                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                </div>
+                <span class="inline-block bg-[#7ea1c4] text-white text-xs font-semibold px-3 py-1 rounded-full">+10
+                  entrepreneurs soulagés</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 📋 Colonne droite : 2 témoignages empilés -->
+
+          <div class="flex flex-col gap-8 h-full">
+
+            <!-- Témoignage 2 -->
+
+            <div
+              class="bg-[#36424d] border border-[#3f4a55] p-6 rounded-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out shadow text-left flex flex-col h-full relative">
+
+              <!-- Icône -->
+
+              <div
+                class="absolute -top-4 -left-4 bg-[#c78a5c] text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-quote">
+                  <path
+                    d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+                  <path
+                    d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+                </svg>
+              </div>
+
+              <!-- Titre -->
+
+              <p class="text-xl font-extrabold text-[#c78a5c] uppercase mb-4">Une méthode qui tient</p>
+
+              <!-- Citation centrée -->
+
+              <div class="flex-grow flex items-center">
+                <p class="text-base font-nunito leading-relaxed italic"> “J’ai enfin arrêté d’improviser. On a fixé une
+                  stratégie, des contenus clairs, et un rythme réaliste. Ça tient, ça tourne, et je gagne du temps
+                  chaque semaine.” </p>
+              </div>
+
+              <!-- Signature -->
+
+              <div class="flex items-center gap-3 mt-6">
+                <img src="https://i.imgur.com/W9h2pC6.png" alt="Patrick B."
+                  class="w-12 h-12 rounded-full border-2 border-white object-cover">
+                <div>
+                  <p class="font-bold">Patrick B.</p>
+                  <p class="text-sm text-[#c2c2c2]">Co-fondateur de Panadis</p>
+                  <p class="text-xs text-[#fcd34d] mt-1">⭐⭐⭐⭐⭐</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Témoignage 3 -->
+
+            <div
+              class="bg-[#36424d] border border-[#3f4a55] p-6 rounded-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out shadow text-left flex flex-col h-full relative">
+
+              <!-- Icône -->
+
+              <div
+                class="absolute -top-4 -left-4 bg-[#c78a5c] text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-quote">
+                  <path
+                    d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+                  <path
+                    d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+                </svg>
+              </div>
+
+              <!-- Titre -->
+
+              <p class="text-xl font-extrabold text-[#c78a5c] uppercase mb-4">Clarté & cohérence</p>
+
+              <!-- Citation centrée -->
+
+              <div class="flex-grow flex items-center">
+                <p class="text-base font-nunito leading-relaxed italic"> “Avant, je communiquais sans trop savoir où
+                  j’allais. Ensemble, on a tout aligné. Mon audience comprend mon message — et moi aussi.” </p>
+              </div>
+
+              <!-- Signature -->
+
+              <div class="flex items-center gap-3 mt-6">
+                <img src="https://i.imgur.com/ldR3xg6.png" alt="Martial L."
+                  class="w-12 h-12 rounded-full border-2 border-white object-cover">
+                <div>
+                  <p class="font-bold">Martial L.</p>
+                  <p class="text-sm text-[#c2c2c2]">Co-gérant de La Fine Équipe</p>
+                  <p class="text-xs text-[#fcd34d] mt-1">⭐⭐⭐⭐⭐</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🧲 LEAD MAGNET -->
+
+    <!--
+    <section id="leadmagnet" class="scroll-adjust bg-white text-[#25353f] pt-12 pb-24 px-6 lg:px-12">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    -->
+
+        <!-- Colonne gauche : Texte + formulaire -->
+    <!--     
+        <div class="space-y-6">
+    
+          <h2 class="text-3xl lg:text-4xl font-extrabold font-montserrat flex items-center gap-2">✨ Pas encore prêt·e pour un appel ?</h2>
+          <p class="text-lg font-nunito">On vous a préparé un kit de survie express pour voir où vous en êtes et comment avancer :</p>
+-->    
+          <!-- Bloc bonus -->
+    <!--      <div class="border border-[#7ea1c4]/50 border-l-4 border-[#7ea1c4] bg-white p-6 rounded-xl shadow-xl space-y-6">
+              <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
+                <p class="font-semibold text-[#25353f] mb-1">📘 État des lieux PDF</p>
+                <p class="text-sm font-nunito text-[#4a4a4a]"><i>5 erreurs invisibles qui sabotent tes réseaux (et comment y remédier sans t’épuiser)</i></p>
+              </div>
+-->            
+              <!-- Bloc Calendrier -->
+    <!--          <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
+                <p class="font-semibold text-[#25353f] mb-1">📅 Calendrier éditorial</p>
+                <p class="text-sm font-nunito text-[#4a4a4a]">Un modèle prêt à dupliquer pour organiser ta communication sans charge mentale</p>
+              </div>
+-->            
+              <!-- Bloc Idées de posts -->
+     <!--         <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
+                <p class="font-semibold text-[#25353f] mb-1">🖊 100 idées de posts</p>
+                <p class="text-sm font-nunito text-[#4a4a4a]">Classées par objectif et type de contenu. À copier-coller selon ton offre.</p>
+              </div>
+          </div>
+          <p class="text-base font-nunito italic text-[#4a4a4a] justify-center">
+            Parfait si vous voulez faire le point, retrouver de la clarté, et poser les premières briques d’une com’ qui vous ressemble.
+          </p>
+-->    
+          <!-- Formulaire MailerLite -->
+    <!--      <form action="https://assets.mailerlite.com/jsonp/1452538/forms/152670669521291134/subscribe" method="post" class="space-y-4" onsubmit="submitMailerLite(event)">
+            <div class="flex flex-col md:flex-row gap-4">
+              <input type="text" name="fields[name]" placeholder="Prénom"
+                class="w-full md:w-1/2 px-4 py-3 rounded-lg border border-[#ddd6cb] bg-[#f9f8f5] text-[#25353f] placeholder-[#999] font-nunito focus:outline-none focus:ring-2 focus:ring-[#7ea1c4]" required>
+              <input type="email" name="fields[email]" placeholder="Email"
+                class="w-full md:w-1/2 px-4 py-3 rounded-lg border border-[#ddd6cb] bg-[#f9f8f5] text-[#25353f] placeholder-[#999] font-nunito focus:outline-none focus:ring-2 focus:ring-[#7ea1c4]" required>
+              <input type="hidden" name="ml-submit" value="1">
+              <input type="hidden" name="anticsrf" value="true">
+              </div>
+            <button type="submit" onclick="sa_event('click_leadmagnet_cta')"
+              class="w-full inline-block bg-[#7ea1c4] hover:bg-[#c78a5c] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-8 rounded-lg font-montserrat text-base shadow hover:scale-[1.03] active:scale-[0.98]">
+              📘 Je télécharge mon kit de survie social media offert
+            </button>
+          </form>
+-->
+          <!-- Message de confirmation -->
+    <!--      <div id="confirmation-message" class="hidden bg-[#e6f5ec] text-[#2d6a4f] border border-[#b7e4c7] shadow-md rounded-xl p-6 font-nunito">
+            <h3 class="text-xl font-semibold mb-2">🎉 C’est en route !</h3>
+            <p class="mb-4">Votre kit de survie vient de décoller 🚀<br>
+            Vous allez le recevoir dans votre boîte mail dans les 2 prochaines minutes (pensez à vérifier les spams).</p>
+            <p class="mb-4 italic">En attendant, respirez. Vous venez de poser un vrai premier pas vers une communication plus claire, plus simple, plus stratégique.<br>
+            Et ça, c’est déjà énorme 👏</p>
+            <p class="text-sm mt-2">🧠 Si jamais vous voullez en parler de vive voix, vous pouvez réserver un appel découverte juste en dessous.</p>
+          </div>
+-->
+          <!-- Message d'erreur -->
+    <!--      <div id="error-message" class="hidden bg-red-50 text-red-800 border border-red-200 shadow-sm rounded-xl p-6 font-nunito">
+            <h3 class="text-xl font-semibold mb-2">⚠️ Oups, une erreur est survenue.</h3>
+            <p class="mb-2">Vérifiez bien votre email ou réessayez dans quelques instants.</p>
+            <p class="text-sm italic">Si le problème persiste, vous pouvez aussi nous écrire directement à <a href="mailto:hello@chezparallax.fr">hello@chezparallax.fr</a> et on vous envoie ça au plus vite !".</p>
+          </div>
+
+          <p class="text-sm font-nunito text-[#999] text-center">📥 Vous recevrez tout dans votre boîte mail dans quelques minutes.</p>
+        </div>
+  -->  
+        <!-- Colonne droite : Mockup responsive comme #solution -->
+  <!--      <div class="relative w-full aspect-[3/4] lg:max-w-md mx-auto">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <img src="https://sdmntprukwest.oaiusercontent.com/files/00000000-26ac-6243-be0c-120f415d6946/raw?se=2025-04-25T16%3A49%3A42Z&sp=r&sv=2024-08-04&sr=b&scid=24e98407-71e7-5544-8fd0-9dc4e7889c9e&skoid=59d06260-d7df-416c-92f4-051f0b47c607&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-25T07%3A10%3A15Z&ske=2025-04-26T07%3A10%3A15Z&sks=b&skv=2024-08-04&sig=W1ctTgSaLvKexaXEAemDzBQYIYgTrHAdC/B2RXMcYhc%3D" alt="Mockup Audit Parallax"
+              class="w-full h-auto object-contain drop-shadow-xl">
+          </div>
+        </div>
+    
+      </div>
+
+      <script>
+        function submitMailerLite(event) {
+          event.preventDefault(); // Empêche l’ouverture
+          const form = event.target;
+      
+          fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            mode: 'no-cors' // important pour éviter les blocages CORS
+          }).then(() => {
+            document.getElementById('confirmation-message').classList.remove('hidden');
+            document.getElementById('error-message').classList.add('hidden');
+          }).catch(() => {
+            document.getElementById('error-message').classList.remove('hidden');
+            document.getElementById('confirmation-message').classList.add('hidden');
+          });
+        }
+      </script>
+      
+
+    </section>
+    -->
+
+    <!-- ❓ SECTION FAQ ACCORDÉON -->
+
+    <section id="faq" class="scroll-adjust bg-[#f5f1e6] text-[#25353f] py-24 px-6 lg:px-12">
+      <div class="max-w-4xl mx-auto">
+
+        <!-- 🎯 Titre + Sous-titre -->
+
+        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4 font-montserrat"> On parie que <span
+            class="text-[#c78a5c]">vous</span> vous posez ces questions&nbsp;? </h2>
+        <p class="text-base text-center text-[#4a4a4a] max-w-2xl mx-auto mb-12 font-nunito"> Ce n’est pas juste vous.
+          Chaque entrepreneur qu’on accompagne a traversé ces hésitations. <br /> Et c’est normal&nbsp;: <span
+            class="font-semibold text-[#c78a5c]">investir dans sa communication</span>, ça mérite des réponses claires.
+        </p>
+        <div x-data="{ selected: null }" class="space-y-4">
+
+          <!-- QUESTION 1 -->
+
+          <div class="border-b border-[#dcd6c9] transition-all duration-500 ease-in-out">
+            <button @click="selected !== 1 ? selected = 1 : selected = null" onclick="sa_event('open_faq_q1')"
+              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Est-ce que ça va
+              vraiment marcher pour moi ? <span x-text="selected === 1 ? '-' : '+'"></span>
+            </button>
+            <div x-show="selected === 1" x-transition:enter="transition-all ease-out duration-500"
+              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave="transition-all ease-in duration-400"
+              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> On n’a pas de baguette magique. Mais on a une
+                méthode. <br /> Si vous êtes prêt·e à collaborer avec transparence, on peut faire décoller vos réseaux —
+                sans improvisation, ni sacrifice de temps ou d’énergie. <br />
+                <br /> Et surtout : on ne travaille pas qu’avec un seul profil de client. <span
+                  class="font-bold text-[#c78a5c]">B2B, B2C, e-commerce, services, formation, restauration,
+                  culture…</span> : notre méthode s’adapte à votre réalité, pas l’inverse.
+              </p>
+            </div>
+          </div>
+
+          <!-- QUESTION 2 -->
+
+          <div class="border-b border-[#dcd6c9]">
+            <button @click="selected !== 2 ? selected = 2 : selected = null" onclick="sa_event('open_faq_q2')"
+              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Et si je ne suis
+              pas du tout à l’aise avec les réseaux ? <span x-text="selected === 2 ? '-' : '+'"></span>
+            </button>
+            <div x-show="selected === 2" x-transition:enter="transition-all ease-out duration-500"
+              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave="transition-all ease-in duration-400"
+              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> Tant mieux. On ne vous demande pas d’être
+                influenceur ou créateur de contenu à plein temps. <br />
+                <span class="font-bold">Vous restez concentré sur votre activité</span> : on se charge de rendre votre
+                présence utile, visible, et alignée à votre ton. <br />
+                <br /> Après tout, <em>vous ne demanderiez pas à votre plombier de réparer votre toiture</em> — chacun
+                son métier 😉
+              </p>
+            </div>
+          </div>
+
+          <!-- QUESTION 3 -->
+
+          <div class="border-b border-[#dcd6c9]">
+            <button @click="selected !== 3 ? selected = 3 : selected = null" onclick="sa_event('open_faq_q3')"
+              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Est-ce que j’aurai
+              le temps de suivre l’accompagnement ? <span x-text="selected === 3 ? '-' : '+'"></span>
+            </button>
+            <div x-show="selected === 3" x-transition:enter="transition-all ease-out duration-500"
+              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave="transition-all ease-in duration-400"
+              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> L’accompagnement est conçu pour vous <span
+                  class="font-bold">faire gagner du temps</span> — pas pour vous en prendre. <br /> Vous restez
+                décisionnaire, on s’occupe du reste. <span class="font-bold">Comptez 1h toutes les 2 semaines</span>
+                pour valider, ajuster, et avancer ensemble. <br />
+                <br /> On reste aussi disponibles en dehors des points fixes. <em>Questions, doutes, urgences ?</em>
+                Vous n’êtes jamais seul. On s’adapte à votre rythme, pas l’inverse.
+              </p>
+            </div>
+          </div>
+
+          <!-- QUESTION 4 -->
+
+          <div class="border-b border-[#dcd6c9]">
+            <button @click="selected !== 4 ? selected = 4 : selected = null" onclick="sa_event('open_faq_q4')"
+              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Et après les 90
+              jours, je fais quoi ? <span x-text="selected === 4 ? '-' : '+'"></span>
+            </button>
+            <div x-show="selected === 4" x-transition:enter="transition-all ease-out duration-500"
+              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave="transition-all ease-in duration-400"
+              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> À la fin du programme, vous repartez avec une <span
+                  class="font-bold">stratégie claire</span>, des <span class="font-bold">process solides</span>, et une
+                <span class="font-bold">bibliothèque de contenus</span> prête à l’emploi. <br />
+                <br /> Si vous êtes satisfait·e de notre méthode et des résultats qu’elle vous a apportée, <span
+                  class="font-bold text-[#c78a5c]">nous proposons aussi des suivis long terme</span> — uniquement pour
+                les clients ayant validé l’accompagnement initial.
+              </p>
+            </div>
+          </div>
+
+          <!-- QUESTION 5 -->
+
+          <div class="border-b border-[#dcd6c9]">
+            <button @click="selected !== 5 ? selected = 5 : selected = null" onclick="sa_event('open_faq_q5')"
+              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Vous ne proposez
+              que cet accompagnement ? <span x-text="selected === 5 ? '-' : '+'"></span>
+            </button>
+            <div x-show="selected === 5" x-transition:enter="transition-all ease-out duration-500"
+              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave="transition-all ease-in duration-400"
+              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> L’accompagnement “Métamorphose” est notre cœur de
+                méthode, mais ce n’est pas tout. <br />
+                <br /> Pour les entrepreneurs déjà engagés ou ayant terminé le programme, <span class="font-bold">nous
+                  proposons aussi des prestations à la carte</span> : <br /> influence, publicité sur les réseaux,
+                contenus longs, communication évènementielle, gestion de crise… <br />
+                <br /> Ces options sont proposées uniquement <span class="font-semibold">sur devis</span>, selon vos
+                objectifs. <em>On en parle dès le premier appel si vous le souhaitez.</em>
+              </p>
+            </div>
+          </div>
+
+          <!-- QUESTION 6 -->
+
+          <div class="border-b border-[#dcd6c9]">
+            <button @click="selected !== 6 ? selected = 6 : selected = null" onclick="sa_event('open_faq_q6')"
+              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Combien ça coûte,
+              concrètement ? <span x-text="selected === 6 ? '-' : '+'"></span>
+            </button>
+            <div x-show="selected === 6" x-transition:enter="transition-all ease-out duration-500"
+              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave="transition-all ease-in duration-400"
+              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> Notre accompagnement signature débute à <strong>3
+                  000 €</strong>, pour 90 jours d’accompagnement complet — <strong>payables en 3 fois</strong>. <br />
+                <em>(Non assujetti à la TVA – régime auto-entrepreneur)</em>
+                <br />
+                <br /> C’est un budget, oui. Mais pour ce tarif, vous avez un <strong>binôme expert, stratégique et
+                  créatif</strong>, concentré à 100 % sur vos résultats. <br /> En réalité ? <strong>Moins cher qu’un
+                  freelance payé à la journée ou qu’un salarié</strong>, plus solide qu’un alternant qui découvre encore
+                le métier.
+              </p>
+            </div>
+          </div>
+
+          <!-- QUESTION 7 -->
+
+          <div class="border-b border-[#dcd6c9]">
+            <button @click="selected !== 7 ? selected = 7 : selected = null" onclick="sa_event('open_faq_q7')"
+              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Pourquoi vous
+              plutôt qu’une agence, un salarié ou un alternant ? <span x-text="selected === 7 ? '-' : '+'"></span>
+            </button>
+            <div x-show="selected === 7" x-transition:enter="transition-all ease-out duration-500"
+              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave="transition-all ease-in duration-400"
+              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> Une <strong>agence</strong> délègue souvent à des
+                juniors. <br /> Un <strong>salarié</strong> ou un <strong>alternant</strong> vous coûte cher sur la
+                durée — et quand il part, vos réseaux s’arrêtent. <br /> Et un <strong>freelance à la journée</strong>
+                peut être vite onéreux… sans toujours vous apporter de recul stratégique. <br />
+                <br /> Nous, on est <strong>deux indépendants</strong>, unis sous un même nom. <br /> Deux regards. Deux
+                expertises. Une seule vision : la vôtre. <br /> Et <strong>si vous êtes satisfait</strong>, on peut
+                <strong>assurer un suivi long terme</strong> pour faire évoluer vos réseaux avec vous.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AlpineJS -->
+
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <!-- ✅ SECTION CTA FINAL (version allégée et élégante) -->
+
+    <section id="cta" class="scroll-adjust relative py-24 px-6 lg:px-12 text-[#f5f1e6]">
+      <div class="absolute inset-0 bg-cover bg-center z-0"
+        style="background-image: url('https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#25353f]/70 to-transparent"></div>
+      </div>
+      <div class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <!-- 💬 Colonne gauche -->
+
+        <div class="flex flex-col justify-center text-left">
+          <div
+            class="bg-[#25353f]/40 backdrop-blur-md rounded-xl p-8 border border-[#99abbd]/60 shadow-xl ring-1 ring-white/10">
+
+            <!-- Surtitre + badge -->
+
+            <div class="flex justify-between items-center mb-2">
+              <p class="text-xs uppercase tracking-wide text-[#7ea1c4] font-semibold"> Appel découverte gratuit </p>
+              <span class="text-[11px] bg-[#c78a5c] text-white font-bold px-4 py-1 rounded-full shadow-sm"> Sans
+                engagement </span>
+            </div>
+
+            <!-- Titre -->
+
+            <h2 class="text-3xl lg:text-4xl font-bold font-montserrat mb-6 leading-normal"> Attirez <span
+                class="text-[#c78a5c]">les bons clients</span>. <br />
+              <span class="text-[#c78a5c]">Sans vous épuiser</span>.
+            </h2>
+
+            <!-- Corps de texte -->
+
+            <p class="text-lg font-nunito mb-6 max-w-xl leading-relaxed">
+              <span class="text-[#7ea1c4] font-semibold">Prenez 30 minutes</span> pour faire le point. <br /> On parle
+              de votre activité, de vos objectifs, et de ce qui freine votre visibilité aujourd’hui.
+            </p>
+            <p class="text-base font-nunito text-[#e4e4e4] mb-6 leading-relaxed"> Si notre approche vous convient, on
+              vous montre comment elle peut générer des résultats concrets grâce à vos réseaux sociaux — <em>sans
+                jargon, sans pression</em>, et surtout <strong>sans perte de temps</strong>. </p>
+
+            <!-- Sous-texte -->
+
+            <p class="text-sm font-nunito text-[#e4e4e4]"> Choisissez un créneau sur <strong>le
+                calendrier</strong>&nbsp;: vous recevrez une <strong>confirmation par mail</strong> et on échange
+              tranquillement à l’heure prévue. </p>
+
+            <!-- Preuve sociale -->
+
+            <div class="flex items-center gap-3 mt-6">
+              <div class="flex -space-x-4">
+                <img src="https://i.imgur.com/W9h2pC6.png" alt="Client 1"
+                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                <img src="https://i.imgur.com/kjdjs4y.png" alt="Client 2"
+                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                <img src="https://i.imgur.com/3uEdDtL.png" alt="Client 3"
+                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                <img src="https://i.imgur.com/lgKFsNr.png" alt="Client 4"
+                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
+              </div>
+              <span class="inline-block bg-[#7ea1c4] text-white text-xs font-semibold px-3 py-1 rounded-full">+10
+                clients soulagés</span>
+            </div>
+          </div>
+
+          <!-- Bloc alerte -->
+
+          <div
+            class="bg-[#c78a5c]/90 backdrop-blur-sm text-white text-sm p-4 rounded-xl shadow-md font-nunito mt-8 border border-[#edd3be]/20">
+            ⚠️ Pour garantir un travail de qualité à chaque client, nous n'acceptons qu’un nombre limité de missions en
+            parallèle. Premier arrivé, premier servi ;) </div>
+        </div>
+
+        <!-- 📅 Calendly -->
+
+        <div>
+          <div class="calendly-inline-widget" style="min-width:320px; height:630px;"
+            data-url="https://calendly.com/chezparallax/30min?hide_event_type_details=1&hide_gdpr_banner=1"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 🡦 FOOTER -->
+
+  <footer class="bg-[#25353f] text-[#f5f1e6] py-12 text-sm">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+
+      <!-- COLONNE 1 : LOGO + COPY -->
+
+      <div class="inline-block max-w-xs bg-[#f5f1e6] px-6 py-4 lg:px-8 lg:py-5 rounded-2xl 
+          shadow-[inset_5px_5px_10px_rgba(0,0,0,0.2)] 
+          border border-[#edd3be]/20 transition-all duration-300
+          hover:shadow-[inset_-5px_5px_10px_rgba(0,0,0,0.3)]">
+        <img src="https://i.imgur.com/o7HP7dp.png" alt="Logo Parallax" class="mb-4 max-w-[220px] mx-auto">
+        <p class="leading-snug text-sm text-[#25353f]">
+          <strong>Stratégie.</strong>
+          <strong>Création.</strong>
+          <i>Résultats concrets.</i>
+          <br> Communication social media <strong>sans vous épuiser.</strong>
+        </p>
+      </div>
+
+      <!-- COLONNE 2 : NAVIGATION -->
+
+      <div class="flex flex-col gap-1">
+        <p class="text-xs uppercase tracking-wider text-[#7ea1c4] mb-2">Navigation</p>
+        <a href="#benefices" class="hover:text-[#c78a5c] transition">Ce qu’on vous apporte</a>
+        <a href="#plan" class="hover:text-[#c78a5c] transition">Le déroulé</a>
+        <a href="#faq" class="hover:text-[#c78a5c] transition">FAQ</a>
+        <a href="/mentions-legales.html" class="hover:text-[#c78a5c] transition">Mentions légales</a>
+        <a href="/politique-confidentialite.html" class="hover:text-[#c78a5c] transition">Politique de
+          confidentialité</a>
+      </div>
+
+      <!-- COLONNE 3 : CONTACT -->
+
+      <div class="flex flex-col gap-2">
+        <p class="text-xs uppercase tracking-wider text-[#7ea1c4] mb-2">Contact</p>
+        <div class="flex gap-4 mb-1">
+          <a href="https://www.linkedin.com/company/chezparallax" target="_blank" onclick="sa_event('click_social_linkedin')" class="hover:text-[#7ea1c4] transition">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+          <a href="https://www.instagram.com/chezparallax/" target="_blank" onclick="sa_event('click_social_instagram')" class="hover:text-[#c78a5c] transition">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </a>
+          <a href="https://www.facebook.com/chezparallax" target="_blank" onclick="sa_event('click_social_facebook')" class="hover:text-[#7ea1c4] transition">
+            <i data-lucide="facebook" class="w-5 h-5"></i>
+          </a>
+        </div>
+        <a href="mailto:hello@chezparallax.fr" class="hover:text-[#c78a5c] transition">hello@chezparallax.fr</a>
+        <p>Sarreguemines, Grand Est</p>
+      </div>
+    </div>
+
+    <!-- LIGNE + COPYRIGHT -->
+
+    <div class="border-t border-[#f5f1e6]/20 mt-12 pt-6 text-center text-xs text-[#e4e4e4]"> © 2025 Parallax — Thibaud &
+      Zoé. Tous droits réservés. </div>
+  </footer>
+
+  <!-- 🛠 INIT ICONES LUCIDE -->
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>
