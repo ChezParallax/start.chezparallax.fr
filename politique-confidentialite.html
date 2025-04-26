@@ -101,23 +101,23 @@
 
 
       <!-- LOGO (à gauche) -->
-      <a href="index.html" onclick="sa_event('click_nav_home')" class="flex items-center gap-2 shrink-0">
+      <a href="" onclick="sa_event('click_nav_home')" class="flex items-center gap-2 shrink-0">
         <img src="https://i.imgur.com/o7HP7dp.png" alt="Logo Parallax" class="h-8 w-auto">
       </a>
 
       <!-- NAVIGATION (au centre) -->
       <nav class="hidden md:flex items-center gap-6 font-semibold text-sm mx-auto">
-        <a href="index.html#solution" onclick="sa_event('click_nav_solution_desktop')" class="hover:text-[#c78a5c] transition">Parallax ?</a>
-        <a href="index.html#benefices" onclick="sa_event('click_nav_benefices_desktop')" class="hover:text-[#c78a5c] transition">Ce qu’on vous apporte</a>
-        <a href="index.html#plan" onclick="sa_event('click_nav_plan_desktop')" class="hover:text-[#c78a5c] transition">Le déroulé</a>
-        <a href="index.html#temoignages" onclick="sa_event('click_nav_temoignages_desktop')" class="hover:text-[#c78a5c] transition">Ils en parlent</a>
-        <!-- <a href="index.html#leadmagnet" onclick="sa_event('click_nav_leadmagnet_desktop')" class="hover:text-[#c78a5c] transition">🎁 Bonus</a> -->
-        <a href="index.html#faq" onclick="sa_event('click_nav_faq_desktop')" class="hover:text-[#c78a5c] transition">FAQ</a>
+        <a href="#solution" onclick="sa_event('click_nav_solution_desktop')" class="hover:text-[#c78a5c] transition">Parallax ?</a>
+        <a href="#benefices" onclick="sa_event('click_nav_benefices_desktop')" class="hover:text-[#c78a5c] transition">Ce qu’on vous apporte</a>
+        <a href="#plan" onclick="sa_event('click_nav_plan_desktop')" class="hover:text-[#c78a5c] transition">Le déroulé</a>
+        <a href="#temoignages" onclick="sa_event('click_nav_temoignages_desktop')" class="hover:text-[#c78a5c] transition">Ils en parlent</a>
+        <!-- <a href="#leadmagnet" onclick="sa_event('click_nav_leadmagnet_desktop')" class="hover:text-[#c78a5c] transition">🎁 Bonus</a> -->
+        <a href="#faq" onclick="sa_event('click_nav_faq_desktop')" class="hover:text-[#c78a5c] transition">FAQ</a>
       </nav>
 
       <!-- CTA (à droite) -->
       <div class="flex items-center gap-4 shrink-0">
-        <a href="index.html#cta" onclick="sa_event('click_cta_navbar_desktop')"
+        <a href="#cta" onclick="sa_event('click_cta_navbar_desktop')"
           class="hidden md:inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-2.5 px-5 rounded-lg text-sm shadow hover:scale-[1.03] active:scale-[0.98]">
           Je réserve mon appel découverte
         </a>
@@ -132,13 +132,13 @@
     <!-- MENU MOBILE -->
     <div x-show="isOpen" x-transition class="md:hidden px-6 pb-6">
       <nav class="flex flex-col gap-4 font-semibold text-sm pt-4 text-[#25353f]">
-        <a href="index.html#solution" @click="isOpen = false" onclick="sa_event('click_nav_solution_mobile')" class="hover:text-[#c78a5c]">Parallax ?</a>
-        <a href="index.html#benefices" @click="isOpen = false" onclick="sa_event('click_nav_benefices_mobile')" class="hover:text-[#c78a5c]">Ce qu’on vous apporte</a>
-        <a href="index.html#plan" @click="isOpen = false" onclick="sa_event('click_nav_plan_mobile')" class="hover:text-[#c78a5c]">Le déroulé</a>
-        <a href="index.html#temoignages" @click="isOpen = false" onclick="sa_event('click_nav_temoignages_mobile')" class="hover:text-[#c78a5c]">Ils en parlent</a>
-        <!-- <a href="index.html#leadmagnet" @click="isOpen = false" onclick="sa_event('click_nav_leadmagnet_mobile')" class="hover:text-[#c78a5c]">🎁 Bonus</a> -->
-        <a href="index.html#faq" @click="isOpen = false" onclick="sa_event('click_nav_faq_mobile')" class="hover:text-[#c78a5c]">FAQ</a>
-        <a href="index.html#cta" @click="isOpen = false" onclick="sa_event('click_cta_navbar_mobile')"
+        <a href="#solution" @click="isOpen = false" onclick="sa_event('click_nav_solution_mobile')" class="hover:text-[#c78a5c]">Parallax ?</a>
+        <a href="#benefices" @click="isOpen = false" onclick="sa_event('click_nav_benefices_mobile')" class="hover:text-[#c78a5c]">Ce qu’on vous apporte</a>
+        <a href="#plan" @click="isOpen = false" onclick="sa_event('click_nav_plan_mobile')" class="hover:text-[#c78a5c]">Le déroulé</a>
+        <a href="#temoignages" @click="isOpen = false" onclick="sa_event('click_nav_temoignages_mobile')" class="hover:text-[#c78a5c]">Ils en parlent</a>
+        <!-- <a href="#leadmagnet" @click="isOpen = false" onclick="sa_event('click_nav_leadmagnet_mobile')" class="hover:text-[#c78a5c]">🎁 Bonus</a> -->
+        <a href="#faq" @click="isOpen = false" onclick="sa_event('click_nav_faq_mobile')" class="hover:text-[#c78a5c]">FAQ</a>
+        <a href="#cta" @click="isOpen = false" onclick="sa_event('click_cta_navbar_mobile')"
           class="block w-full text-center bg-[#c78a5c] hover:bg-[#7ea1c4] text-white py-2 rounded-lg shadow transition">
           Je réserve mon appel découverte offert
         </a>
@@ -250,9 +250,9 @@
 
       <div class="flex flex-col gap-1">
         <p class="text-xs uppercase tracking-wider text-[#7ea1c4] mb-2">Navigation</p>
-        <a href="index.html#benefices" class="hover:text-[#c78a5c] transition">Ce qu’on vous apporte</a>
-        <a href="index.html#plan" class="hover:text-[#c78a5c] transition">Le déroulé</a>
-        <a href="index.html#faq" class="hover:text-[#c78a5c] transition">FAQ</a>
+        <a href="#benefices" class="hover:text-[#c78a5c] transition">Ce qu’on vous apporte</a>
+        <a href="#plan" class="hover:text-[#c78a5c] transition">Le déroulé</a>
+        <a href="#faq" class="hover:text-[#c78a5c] transition">FAQ</a>
         <a href="/mentions-legales.html" class="hover:text-[#c78a5c] transition">Mentions légales</a>
         <a href="/politique-confidentialite.html" class="hover:text-[#c78a5c] transition">Politique de
           confidentialité</a>
