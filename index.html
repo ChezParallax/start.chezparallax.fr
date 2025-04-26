@@ -92,7 +92,7 @@
     }
   </style>
 
-<!-- 
+  <!-- 
 👋 Hey, toi.
 
 Si tu lis ça, c’est que tu fais partie des rares à explorer sous la surface.  
@@ -120,7 +120,7 @@ function grow(business) {
 
 // — Thibaud, le mec derrière le rideau 👀
 -->
-  
+
 </head>
 
 <body class="bg-[#f5f1e6] text-[#25353f]">
@@ -128,53 +128,9 @@ function grow(business) {
   <!-- 🔝 HEADER NAVIGATION STICKY -->
 
   <header x-data="{ isOpen: false }" class="sticky top-0 z-50 bg-white border-b border-[#e2dfd7] backdrop-blur-md">
-    <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-4 sm:px-6 lg:px-0">
 
+    <div id="header"></div>
 
-      <!-- LOGO (à gauche) -->
-      <a href="#" onclick="sa_event('click_nav_home')" class="flex items-center gap-2 shrink-0">
-        <img src="https://i.imgur.com/o7HP7dp.png" alt="Logo Parallax" class="h-8 w-auto">
-      </a>
-
-      <!-- NAVIGATION (au centre) -->
-      <nav class="hidden md:flex items-center gap-6 font-semibold text-sm mx-auto">
-        <a href="#solution" onclick="sa_event('click_nav_solution_desktop')" class="hover:text-[#c78a5c] transition">Parallax ?</a>
-        <a href="#benefices" onclick="sa_event('click_nav_benefices_desktop')" class="hover:text-[#c78a5c] transition">Ce qu’on vous apporte</a>
-        <a href="#plan" onclick="sa_event('click_nav_plan_desktop')" class="hover:text-[#c78a5c] transition">Le déroulé</a>
-        <a href="#temoignages" onclick="sa_event('click_nav_temoignages_desktop')" class="hover:text-[#c78a5c] transition">Ils en parlent</a>
-        <!-- <a href="#leadmagnet" onclick="sa_event('click_nav_leadmagnet_desktop')" class="hover:text-[#c78a5c] transition">🎁 Bonus</a> -->
-        <a href="#faq" onclick="sa_event('click_nav_faq_desktop')" class="hover:text-[#c78a5c] transition">FAQ</a>
-      </nav>
-
-      <!-- CTA (à droite) -->
-      <div class="flex items-center gap-4 shrink-0">
-        <a href="#cta" onclick="sa_event('click_cta_navbar_desktop')"
-          class="hidden md:inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-2.5 px-5 rounded-lg text-sm shadow hover:scale-[1.03] active:scale-[0.98]">
-          Je réserve mon appel découverte
-        </a>
-
-        <!-- MENU BURGER MOBILE -->
-        <button @click="isOpen = !isOpen" onclick="sa_event('click_nav_burger')" class="md:hidden" aria-label="Ouvrir le menu">
-          <i data-lucide="menu" class="w-6 h-6 stroke-2"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- MENU MOBILE -->
-    <div x-show="isOpen" x-transition class="md:hidden px-6 pb-6">
-      <nav class="flex flex-col gap-4 font-semibold text-sm pt-4 text-[#25353f]">
-        <a href="#solution" @click="isOpen = false" onclick="sa_event('click_nav_solution_mobile')" class="hover:text-[#c78a5c]">Parallax ?</a>
-        <a href="#benefices" @click="isOpen = false" onclick="sa_event('click_nav_benefices_mobile')" class="hover:text-[#c78a5c]">Ce qu’on vous apporte</a>
-        <a href="#plan" @click="isOpen = false" onclick="sa_event('click_nav_plan_mobile')" class="hover:text-[#c78a5c]">Le déroulé</a>
-        <a href="#temoignages" @click="isOpen = false" onclick="sa_event('click_nav_temoignages_mobile')" class="hover:text-[#c78a5c]">Ils en parlent</a>
-        <!-- <a href="#leadmagnet" @click="isOpen = false" onclick="sa_event('click_nav_leadmagnet_mobile')" class="hover:text-[#c78a5c]">🎁 Bonus</a> -->
-        <a href="#faq" @click="isOpen = false" onclick="sa_event('click_nav_faq_mobile')" class="hover:text-[#c78a5c]">FAQ</a>
-        <a href="#cta" @click="isOpen = false" onclick="sa_event('click_cta_navbar_mobile')"
-          class="block w-full text-center bg-[#c78a5c] hover:bg-[#7ea1c4] text-white py-2 rounded-lg shadow transition">
-          Je réserve mon appel découverte offert
-        </a>
-      </nav>
-    </div>
   </header>
 
 
@@ -185,7 +141,7 @@ function grow(business) {
 
     <!-- 🦸 HERO SECTION -->
 
-        <!-- 🦸 HERO SECTION -->
+    <!-- 🦸 HERO SECTION -->
 
     <section class="scroll-adjust bg-[#f5f1e6] text-[#25353f] pt-12 pb-24 px-6 lg:px-12">
       <div class="max-w-6xl mx-auto match-height gap-12 grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
@@ -233,7 +189,8 @@ function grow(business) {
                 class="w-10 h-10 rounded-full border-2 border-white object-cover">
               <img src="/assets/img/logo-aja.webp" alt="Logo de la marque Aujourd'hui j'arrête – client accompagné"
                 class="w-10 h-10 rounded-full border-2 border-white object-cover">
-              <img src="/assets/img/logo-dolorium_tattoo.webp" alt="Logo de l'indépendant Dolorium Tattoo – client accompagné"
+              <img src="/assets/img/logo-dolorium_tattoo.webp"
+                alt="Logo de l'indépendant Dolorium Tattoo – client accompagné"
                 class="w-10 h-10 rounded-full border-2 border-white object-cover">
               <img src="/assets/img/logo-la_fine_equipe.webp" alt="Logo de la marque La Fine Équipe – client accompagné"
                 class="w-10 h-10 rounded-full border-2 border-white object-cover">
@@ -253,9 +210,9 @@ function grow(business) {
         <!-- ➡️ Colonne droite : Image de transformation -->
 
         <div class="flex justify-center lg:col-span-2">
-          <img
-            src="/assets/img/hero-offre-signature.webp"
-            alt="Entrepreneur·e tapant sur un ordinateur avec réactions sociales – solution clés en main pour réseaux sociaux" class="rounded-2xl shadow-xl w-full max-w-md lg:max-w-full object-cover">
+          <img src="/assets/img/hero-offre-signature.webp"
+            alt="Entrepreneur·e tapant sur un ordinateur avec réactions sociales – solution clés en main pour réseaux sociaux"
+            class="rounded-2xl shadow-xl w-full max-w-md lg:max-w-full object-cover">
         </div>
       </div>
     </section>
@@ -330,8 +287,8 @@ function grow(business) {
             de vos réseaux un véritable <span class="text-[#c78a5c] font-extrabold">moteur pour votre activité</span>.
           </h2>
           <p class="text-lg font-nunito mb-6"> Nous, c’est Thibaud et Zoé Beckrich. Frère et sœur, duo stratégique et
-            créatif. <br /> Depuis plus de <span class="font-semibold">10 ans</span> cumulés, on aide les entreprises à <span
-              class="font-extrabold">reprendre le contrôle sur leurs réseaux</span> pour construire <span
+            créatif. <br /> Depuis plus de <span class="font-semibold">10 ans</span> cumulés, on aide les entreprises à
+            <span class="font-extrabold">reprendre le contrôle sur leurs réseaux</span> pour construire <span
               class="font-extrabold">une communication claire, alignée et qui fait avancer leur activité</span>. </p>
           <p class="text-lg font-nunito mb-6"> On a vu des projets brillants échouer — non par manque d’idée, mais par
             absence de <span class="font-semibold">vision, méthode, ou cohérence de marque</span>. C’est précisément ce
@@ -362,9 +319,9 @@ function grow(business) {
         <!-- 👁 Visuel équipe -->
 
         <div class="flex justify-center">
-          <img
-            src="assets/img/solution-equipe_parallax.webp"
-            alt="Thibaud et Zoé Beckrich - L'équipe Parallax - La solution pour vos réseaux sociaux" class="w-full max-w-md lg:max-w-full object-cover">
+          <img src="assets/img/solution-equipe_parallax.webp"
+            alt="Thibaud et Zoé Beckrich - L'équipe Parallax - La solution pour vos réseaux sociaux"
+            class="w-full max-w-md lg:max-w-full object-cover">
 
           <!-- Remplace ce visuel par ton duo en bonne qualité -->
 
@@ -493,8 +450,7 @@ function grow(business) {
           <!-- Colonne droite -->
 
           <div class="h-full">
-            <img
-              src="/assets/img/plan-illustration_3d.webp"
+            <img src="/assets/img/plan-illustration_3d.webp"
               alt="Illustration 3D d'une cible marketing atteinte par des flèches, entourée d'une ampoule et d'un mégaphone, symbolisant une stratégie de communication digitale efficace"
               class="rounded-2xl shadow-xl w-full h-full object-cover">
           </div>
@@ -552,7 +508,8 @@ function grow(business) {
                   <!-- Signature toujours en bas -->
 
                   <div class="flex items-center gap-3 mt-6">
-                    <img src="/assets/img/logo-dolorium_tattoo.webp" alt="Logo de Dolorium Tattoo - Un client satisfait par notre accompagnement"
+                    <img src="/assets/img/logo-dolorium_tattoo.webp"
+                      alt="Logo de Dolorium Tattoo - Un client satisfait par notre accompagnement"
                       class="w-12 h-12 rounded-full border-2 border-white object-cover">
                     <div>
                       <p class="font-bold">Arnaud F.</p>
@@ -571,17 +528,19 @@ function grow(business) {
               <div class="flex items-center gap-4 justify-center flex-wrap text-center">
                 <div class="flex -space-x-4">
                   <img src="/assets/img/logo-panadis.webp" alt="Logo de l'enreprise Panadis – client accompagné"
-                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
                   <img src="/assets/img/logo-times.webp" alt="Logo de l'enreprise Time's – client accompagné"
-                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
                   <img src="/assets/img/logo-aja.webp" alt="Logo de la marque Aujourd'hui j'arrête – client accompagné"
-                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
-                  <img src="/assets/img/logo-dolorium_tattoo.webp" alt="Logo de l'indépendant Dolorium Tattoo – client accompagné"
-                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
-                  <img src="/assets/img/logo-la_fine_equipe.webp" alt="Logo de la marque La Fine Équipe – client accompagné"
-                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  <img src="/assets/img/logo-dolorium_tattoo.webp"
+                    alt="Logo de l'indépendant Dolorium Tattoo – client accompagné"
+                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  <img src="/assets/img/logo-la_fine_equipe.webp"
+                    alt="Logo de la marque La Fine Équipe – client accompagné"
+                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
                   <img src="assets/img/logo-energus_10.webp" alt="Logo de la marque energus10 – client accompagné"
-                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
                 </div>
                 <span class="inline-block bg-[#7ea1c4] text-white text-xs font-semibold px-3 py-1 rounded-full">+10
                   entrepreneurs soulagés</span>
@@ -627,7 +586,8 @@ function grow(business) {
               <!-- Signature -->
 
               <div class="flex items-center gap-3 mt-6">
-                <img src="/assets/img/logo-panadis.webp" alt="Logo de Panadis - Entreprise accompagnée et satisfaite de notre méthode"
+                <img src="/assets/img/logo-panadis.webp"
+                  alt="Logo de Panadis - Entreprise accompagnée et satisfaite de notre méthode"
                   class="w-12 h-12 rounded-full border-2 border-white object-cover">
                 <div>
                   <p class="font-bold">Patrick B.</p>
@@ -670,7 +630,8 @@ function grow(business) {
               <!-- Signature -->
 
               <div class="flex items-center gap-3 mt-6">
-                <img src="/assets/img/logo-la_fine_equipe.webp" alt="Logo de La Fine Équipe, marque qui a retrouvé clarté et cohérence pour ses réseaux sociaux avec l'accompagnement de Parallax"
+                <img src="/assets/img/logo-la_fine_equipe.webp"
+                  alt="Logo de La Fine Équipe, marque qui a retrouvé clarté et cohérence pour ses réseaux sociaux avec l'accompagnement de Parallax"
                   class="w-12 h-12 rounded-full border-2 border-white object-cover">
                 <div>
                   <p class="font-bold">Martial L.</p>
@@ -691,28 +652,28 @@ function grow(business) {
       <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
     -->
 
-        <!-- Colonne gauche : Texte + formulaire -->
+    <!-- Colonne gauche : Texte + formulaire -->
     <!--     
         <div class="space-y-6">
     
           <h2 class="text-3xl lg:text-4xl font-extrabold font-montserrat flex items-center gap-2">✨ Pas encore prêt·e pour un appel ?</h2>
           <p class="text-lg font-nunito">On vous a préparé un kit de survie express pour voir où vous en êtes et comment avancer :</p>
--->    
-          <!-- Bloc bonus -->
+-->
+    <!-- Bloc bonus -->
     <!--      <div class="border border-[#7ea1c4]/50 border-l-4 border-[#7ea1c4] bg-white p-6 rounded-xl shadow-xl space-y-6">
               <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
                 <p class="font-semibold text-[#25353f] mb-1">📘 État des lieux PDF</p>
                 <p class="text-sm font-nunito text-[#4a4a4a]"><i>5 erreurs invisibles qui sabotent tes réseaux (et comment y remédier sans t’épuiser)</i></p>
               </div>
--->            
-              <!-- Bloc Calendrier -->
+-->
+    <!-- Bloc Calendrier -->
     <!--          <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
                 <p class="font-semibold text-[#25353f] mb-1">📅 Calendrier éditorial</p>
                 <p class="text-sm font-nunito text-[#4a4a4a]">Un modèle prêt à dupliquer pour organiser ta communication sans charge mentale</p>
               </div>
--->            
-              <!-- Bloc Idées de posts -->
-     <!--         <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
+-->
+    <!-- Bloc Idées de posts -->
+    <!--         <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
                 <p class="font-semibold text-[#25353f] mb-1">🖊 100 idées de posts</p>
                 <p class="text-sm font-nunito text-[#4a4a4a]">Classées par objectif et type de contenu. À copier-coller selon ton offre.</p>
               </div>
@@ -720,8 +681,8 @@ function grow(business) {
           <p class="text-base font-nunito italic text-[#4a4a4a] justify-center">
             Parfait si vous voulez faire le point, retrouver de la clarté, et poser les premières briques d’une com’ qui vous ressemble.
           </p>
--->    
-          <!-- Formulaire MailerLite -->
+-->
+    <!-- Formulaire MailerLite -->
     <!--      <form action="https://assets.mailerlite.com/jsonp/1452538/forms/152670669521291134/subscribe" method="post" class="space-y-4" onsubmit="submitMailerLite(event)">
             <div class="flex flex-col md:flex-row gap-4">
               <input type="text" name="fields[name]" placeholder="Prénom"
@@ -737,7 +698,7 @@ function grow(business) {
             </button>
           </form>
 -->
-          <!-- Message de confirmation -->
+    <!-- Message de confirmation -->
     <!--      <div id="confirmation-message" class="hidden bg-[#e6f5ec] text-[#2d6a4f] border border-[#b7e4c7] shadow-md rounded-xl p-6 font-nunito">
             <h3 class="text-xl font-semibold mb-2">🎉 C’est en route !</h3>
             <p class="mb-4">Votre kit de survie vient de décoller 🚀<br>
@@ -747,7 +708,7 @@ function grow(business) {
             <p class="text-sm mt-2">🧠 Si jamais vous voullez en parler de vive voix, vous pouvez réserver un appel découverte juste en dessous.</p>
           </div>
 -->
-          <!-- Message d'erreur -->
+    <!-- Message d'erreur -->
     <!--      <div id="error-message" class="hidden bg-red-50 text-red-800 border border-red-200 shadow-sm rounded-xl p-6 font-nunito">
             <h3 class="text-xl font-semibold mb-2">⚠️ Oups, une erreur est survenue.</h3>
             <p class="mb-2">Vérifiez bien votre email ou réessayez dans quelques instants.</p>
@@ -756,9 +717,9 @@ function grow(business) {
 
           <p class="text-sm font-nunito text-[#999] text-center">📥 Vous recevrez tout dans votre boîte mail dans quelques minutes.</p>
         </div>
-  -->  
-        <!-- Colonne droite : Mockup responsive comme #solution -->
-  <!--      <div class="relative w-full aspect-[3/4] lg:max-w-md mx-auto">
+  -->
+    <!-- Colonne droite : Mockup responsive comme #solution -->
+    <!--      <div class="relative w-full aspect-[3/4] lg:max-w-md mx-auto">
           <div class="absolute inset-0 flex items-center justify-center">
             <img src="https://sdmntprukwest.oaiusercontent.com/files/00000000-26ac-6243-be0c-120f415d6946/raw?se=2025-04-25T16%3A49%3A42Z&sp=r&sv=2024-08-04&sr=b&scid=24e98407-71e7-5544-8fd0-9dc4e7889c9e&skoid=59d06260-d7df-416c-92f4-051f0b47c607&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-25T07%3A10%3A15Z&ske=2025-04-26T07%3A10%3A15Z&sks=b&skv=2024-08-04&sig=W1ctTgSaLvKexaXEAemDzBQYIYgTrHAdC/B2RXMcYhc%3D" alt="Mockup Audit Parallax"
               class="w-full h-auto object-contain drop-shadow-xl">
@@ -790,7 +751,7 @@ function grow(business) {
     </section>
     -->
 
-    
+
     <!-- ❓ SECTION FAQ ACCORDÉON -->
 
     <section id="faq" class="scroll-adjust bg-[#f5f1e6] text-[#25353f] py-24 px-6 lg:px-12">
@@ -1029,17 +990,19 @@ function grow(business) {
             <div class="flex items-center gap-3 mt-6">
               <div class="flex -space-x-4">
                 <img src="/assets/img/logo-panadis.webp" alt="Logo de l'enreprise Panadis – client accompagné"
-                class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
                 <img src="/assets/img/logo-times.webp" alt="Logo de l'enreprise Time's – client accompagné"
-                class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
                 <img src="/assets/img/logo-aja.webp" alt="Logo de la marque Aujourd'hui j'arrête – client accompagné"
-                class="w-10 h-10 rounded-full border-2 border-white object-cover">
-                <img src="/assets/img/logo-dolorium_tattoo.webp" alt="Logo de l'indépendant Dolorium Tattoo – client accompagné"
-                class="w-10 h-10 rounded-full border-2 border-white object-cover">
-                <img src="/assets/img/logo-la_fine_equipe.webp" alt="Logo de la marque La Fine Équipe – client accompagné"
-                class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                <img src="/assets/img/logo-dolorium_tattoo.webp"
+                  alt="Logo de l'indépendant Dolorium Tattoo – client accompagné"
+                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                <img src="/assets/img/logo-la_fine_equipe.webp"
+                  alt="Logo de la marque La Fine Équipe – client accompagné"
+                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
                 <img src="assets/img/logo-energus_10.webp" alt="Logo de la marque energus10 – client accompagné"
-                class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                  class="w-10 h-10 rounded-full border-2 border-white object-cover">
               </div>
               <span class="inline-block bg-[#7ea1c4] text-white text-xs font-semibold px-3 py-1 rounded-full">+10
                 clients soulagés</span>
@@ -1068,59 +1031,9 @@ function grow(business) {
   <!-- 🡦 FOOTER -->
 
   <footer class="bg-[#25353f] text-[#f5f1e6] py-12 text-sm">
-    <div class="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
 
-      <!-- COLONNE 1 : LOGO + COPY -->
+    <div id="footer"></div>
 
-      <div class="inline-block max-w-xs bg-[#f5f1e6] px-6 py-4 lg:px-8 lg:py-5 rounded-2xl 
-          shadow-[inset_5px_5px_10px_rgba(0,0,0,0.2)] 
-          border border-[#edd3be]/20 transition-all duration-300
-          hover:shadow-[inset_-5px_5px_10px_rgba(0,0,0,0.3)]">
-        <img src="/assets/svg/logo-parallax-h.svg" alt="Logo Parallax représentant un oeil à deux pupilles" class="mb-4 max-w-[220px] mx-auto">
-        <p class="leading-snug text-sm text-[#25353f]">
-          <strong>Stratégie.</strong>
-          <strong>Création.</strong>
-          <i>Résultats concrets.</i>
-          <br> Communication social media <strong>sans vous épuiser.</strong>
-        </p>
-      </div>
-
-      <!-- COLONNE 2 : NAVIGATION -->
-
-      <div class="flex flex-col gap-1">
-        <p class="text-xs uppercase tracking-wider text-[#7ea1c4] mb-2">Navigation</p>
-        <a href="#benefices" class="hover:text-[#c78a5c] transition">Ce qu’on vous apporte</a>
-        <a href="#plan" class="hover:text-[#c78a5c] transition">Le déroulé</a>
-        <a href="#faq" class="hover:text-[#c78a5c] transition">FAQ</a>
-        <a href="/mentions-legales" class="hover:text-[#c78a5c] transition">Mentions légales</a>
-        <a href="/politique-confidentialite" class="hover:text-[#c78a5c] transition">Politique de
-          confidentialité</a>
-      </div>
-
-      <!-- COLONNE 3 : CONTACT -->
-
-      <div class="flex flex-col gap-2">
-        <p class="text-xs uppercase tracking-wider text-[#7ea1c4] mb-2">Contact</p>
-        <div class="flex gap-4 mb-1">
-          <a href="https://www.linkedin.com/company/chezparallax" target="_blank" onclick="sa_event('click_social_linkedin')" class="hover:text-[#7ea1c4] transition">
-            <i data-lucide="linkedin" class="w-5 h-5"></i>
-          </a>
-          <a href="https://www.instagram.com/chezparallax/" target="_blank" onclick="sa_event('click_social_instagram')" class="hover:text-[#c78a5c] transition">
-            <i data-lucide="instagram" class="w-5 h-5"></i>
-          </a>
-          <a href="https://www.facebook.com/chezparallax" target="_blank" onclick="sa_event('click_social_facebook')" class="hover:text-[#7ea1c4] transition">
-            <i data-lucide="facebook" class="w-5 h-5"></i>
-          </a>
-        </div>
-        <a href="mailto:hello@chezparallax.fr" class="hover:text-[#c78a5c] transition">hello@chezparallax.fr</a>
-        <p>Sarreguemines, Grand Est</p>
-      </div>
-    </div>
-
-    <!-- LIGNE + COPYRIGHT -->
-
-    <div class="border-t border-[#f5f1e6]/20 mt-12 pt-6 text-center text-xs text-[#e4e4e4]"> © 2025 Parallax — Thibaud &
-      Zoé. Tous droits réservés. </div>
   </footer>
 
   <!-- 🛠 INIT ICONES LUCIDE -->
@@ -1128,6 +1041,20 @@ function grow(business) {
   <script>
     lucide.createIcons();
   </script>
+
+  <script>
+    // Charge dynamiquement le header et le footer
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("/parts/header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header").innerHTML = data);
+
+      fetch("/parts/footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer").innerHTML = data);
+    });
+  </script>
+
 </body>
 
 </html>
