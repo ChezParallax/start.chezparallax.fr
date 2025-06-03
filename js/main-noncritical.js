@@ -168,7 +168,7 @@ inView("#freebie-img-col", () => {
 });
 
 // Gestion dynamique du formulaire MailerLite
-window.submitMailerLite = function(event) {
+window.submitMailerLite = function (event) {
   event.preventDefault();
   const form = event.target;
   const confirmation = document.getElementById('confirmation-message');
@@ -246,3 +246,26 @@ Cal.ns.decouverte("ui", {
   hideEventTypeDetails: false,
   layout: "month_view"
 });
+
+// Bloc principal : fade + translateY
+inView("#cta", (info) => {
+  animate(
+    "#cta .flex-1",
+    { opacity: [0, 1], transform: ["translateY(64px)", "translateY(0px)"] },
+    { delay: 0.1, duration: 0.7, easing: "cubic-bezier(.33,1.02,.37,1)", fill: "forwards" }
+  );
+
+  // Bouton : pop-up delay
+  animate(
+    "#cta-cal-btn",
+    { opacity: [0, 1], transform: ["scale(.85)", "scale(1)"] },
+    { delay: 0.5, duration: 0.44, easing: "cubic-bezier(.22,1.07,.28,1)", fill: "forwards" }
+  );
+
+  // Bloc alerte pulse (effet doux de scale + opacity)
+  animate(
+    "#cta .cta-alert",
+    { scale: [1, 1.035, 1], opacity: [1, 0.97, 1] },
+    { duration: 2.2, repeat: Infinity, easing: "ease-in-out" }
+  );
+}, { margin: "-20% 0px" });
