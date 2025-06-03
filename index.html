@@ -12,10 +12,6 @@
   <meta name="author" content="Parallax">
   <meta name="robots" content="index, follow">
 
-  <!-- SIMPLE ANALYTICS -->
-
-  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-
   <!-- 📱 META SOCIAL -->
 
   <meta property="og:title" content="Parallax — Stratégie réseaux sociaux 360°">
@@ -33,19 +29,28 @@
 
   <title>Parallax — Réseaux sociaux au service de votre business</title>
 
-  <!-- 🎨 TAILWIND CSS -->
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
   <!-- 💻 POLICES -->
 
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Nunito:wght@400;600;800;900&display=swap"
     rel="stylesheet">
 
-  <!-- 💼 ICONS (Lucide) -->
 
-  <script src="https://unpkg.com/lucide@latest"></script>
+<!-- TAILWIND (toujours en premier) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- DaisyUI -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/daisyui"></script> -->
+
+<!-- ICONES Lucide -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<!-- AlpineJS -->
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<!-- CRITICAL JS -->
+<script src="/js/main-critical.js" type="module" defer></script>
+
   <style>
     body {
       font-family: 'Nunito', sans-serif;
@@ -127,7 +132,7 @@ function grow(business) {
 
   <!-- 🔝 HEADER NAVIGATION STICKY -->
 
-  <header x-data="{ isOpen: false }" class="sticky top-0 z-50 bg-white border-b border-[#e2dfd7] backdrop-blur-md">
+  <header x-data="{ isOpen: false }" class="sticky top-0 z-50 w-full bg-white/70 border-b border-[#7ea1c4]/20 backdrop-blur-lg">
 
     <div id="header"></div>
 
@@ -136,873 +141,375 @@ function grow(business) {
 
 
   <!-- 🌍 CORPS DE PAGE -->
-
   <main>
 
     <!-- 🦸 HERO SECTION -->
+  <section class="scroll-adjust bg-[#f5f1e6] text-[#25353f] pt-12 pb-24 px-6 lg:px-12">
+    <div class="max-w-6xl mx-auto match-height gap-12 grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
 
-    <section class="scroll-adjust bg-[#f5f1e6] text-[#25353f] pt-12 pb-24 px-6 lg:px-12">
-      <div class="max-w-6xl mx-auto match-height gap-12 grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+      <!-- ⬅️ Colonne gauche : Texte, CTA, Preuve sociale -->
+      <div class="lg:col-span-3">
 
-        <!-- ⬅️ Colonne gauche : Texte, CTA, Preuve sociale -->
+        <!-- 👋 Eyebrow -->
+        <p id="hero-lead" class="text-sm lg:text-base text-[#25353f] font-semibold mb-3 tracking-wide opacity-0">
+          👋 Hey, les entrepreneurs débordés…
+        </p>
+        <h1 id="hero-title" class="text-4xl lh:2 lg:text-5xl font-extrabold font-montserrat leading-tight mb-6 opacity-0">
+          Et si vos réseaux vous apportaient enfin <br>
+          <span class="inline-block bg-[#c78a5c] text-[#f5f1e6] px-1 rounded">les bons clients</span>, <br>
+          sans y perdre vos <span class="text-[#7ea1c4]">soirées</span> ou votre <span class="text-[#c78a5c]">
+            <u>énergie</u>
+          </span> ?
+        </h1>
+        <p id="hero-desc" class="text-md font-nunito mb-8 max-w-xl opacity-0">
+          Vous n’êtes pas censé passer vos journées à <span class="font-bold">courir après les algorithmes</span>. <br>
+          <br> Pendant <span class="font-bold text-[#c78a5c]">90 jours</span>, on prend en main vos réseaux :
+          stratégie claire, contenus professionnels, visibilité utile. <br>
+          <br> Vous restez focus sur votre activité — pendant que vos réseaux attirent <span class="font-bold">les
+          bons clients</span> à votre place.
+        </p>
 
-        <div class="lg:col-span-3">
+        <!-- 🎯 CTA Principal -->
+        <a id="hero-cta" href="#cta" onclick="sa_event('click_cta_hero')"
+          class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-4 px-8 rounded-lg font-montserrat text-base shadow hover:scale-[1.02] active:scale-[0.98] opacity-0">
+          Je réserve mon appel découverte offert
+        </a>
 
-          <!-- 👋 Eyebrow -->
+        <!-- ⭐ Preuve sociale stylisée -->
+        <div id="hero-social-proof" class="mt-8 flex items-center gap-4 opacity-0">
 
-          <p class="text-sm lg:text-base text-[#25353f] font-semibold mb-3 tracking-wide">
-            👋 Hey, les entrepreneurs débordés…
-          </p>
-          <h1 class="text-4xl lh:2 lg:text-5xl font-extrabold font-montserrat leading-tight mb-6"> Et si vos réseaux
-            vous apportaient enfin <br>
-            <span class="inline-block bg-[#c78a5c] text-[#f5f1e6] px-1 rounded">les bons clients</span>, <br> sans y perdre vos <span
-              class="text-[#7ea1c4]">soirées</span> ou votre <span class="text-[#c78a5c]">
-              <u>énergie</u>
-            </span> ? </span>
-          </h1>
-          <p class="text-md font-nunito mb-8 max-w-xl"> Vous n’êtes pas censé passer vos journées à <span
-              class="font-bold">courir après les algorithmes</span>. <br>
-            <br> Pendant <span class="font-bold text-[#c78a5c]">90 jours</span>, on prend en main vos réseaux :
-            stratégie claire, contenus professionnels, visibilité utile. <br>
-            <br> Vous restez focus sur votre activité — pendant que vos réseaux attirent <span class="font-bold">les
-              bons clients</span> à votre place.
-          </p>
+          <!-- 👥 Avatars clients superposés -->
+          <div class="flex -space-x-4">
+            <img id="hero-avatar-1" src="/assets/img/logo-panadis.webp" alt="Logo de l'enreprise Panadis – client accompagné"
+              class="w-10 h-10 rounded-full border-2 border-white object-cover opacity-0">
+            <img id="hero-avatar-2" src="/assets/img/logo-times.webp" alt="Logo de l'enreprise Time's – client accompagné"
+              class="w-10 h-10 rounded-full border-2 border-white object-cover opacity-0">
+            <img id="hero-avatar-3" src="/assets/img/logo-aja.webp" alt="Logo de la marque Aujourd'hui j'arrête – client accompagné"
+              class="w-10 h-10 rounded-full border-2 border-white object-cover opacity-0">
+            <img id="hero-avatar-4" src="/assets/img/logo-dolorium_tattoo.webp"
+              alt="Logo de l'indépendant Dolorium Tattoo – client accompagné"
+              class="w-10 h-10 rounded-full border-2 border-white object-cover opacity-0">
+            <img id="hero-avatar-5" src="/assets/img/logo-la_fine_equipe.webp" alt="Logo de la marque La Fine Équipe – client accompagné"
+              class="w-10 h-10 rounded-full border-2 border-white object-cover opacity-0">
+            <img id="hero-avatar-6" src="/assets/img/logo-energus_10.webp" alt="Logo de la marque energus10 – client accompagné"
+              class="w-10 h-10 rounded-full border-2 border-white object-cover opacity-0">
+          </div>
 
-          <!-- 🎯 CTA Principal -->
-
-          <a href="#cta" onclick="sa_event('click_cta_hero')"
-            class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-4 px-8 rounded-lg font-montserrat text-base shadow hover:scale-[1.02] active:scale-[0.98]">
-            Je réserve mon appel découverte offert </a>
-
-          <!-- ⭐ Preuve sociale stylisée -->
-
-          <div class="mt-8 flex items-center gap-4">
-
-            <!-- 👥 Avatars clients superposés -->
-
-            <div class="flex -space-x-4">
-              <img src="/assets/img/logo-panadis.webp" alt="Logo de l'enreprise Panadis – client accompagné"
-                class="w-10 h-10 rounded-full border-2 border-white object-cover">
-              <img src="/assets/img/logo-times.webp" alt="Logo de l'enreprise Time's – client accompagné"
-                class="w-10 h-10 rounded-full border-2 border-white object-cover">
-              <img src="/assets/img/logo-aja.webp" alt="Logo de la marque Aujourd'hui j'arrête – client accompagné"
-                class="w-10 h-10 rounded-full border-2 border-white object-cover">
-              <img src="/assets/img/logo-dolorium_tattoo.webp"
-                alt="Logo de l'indépendant Dolorium Tattoo – client accompagné"
-                class="w-10 h-10 rounded-full border-2 border-white object-cover">
-              <img src="/assets/img/logo-la_fine_equipe.webp" alt="Logo de la marque La Fine Équipe – client accompagné"
-                class="w-10 h-10 rounded-full border-2 border-white object-cover">
-              <img src="assets/img/logo-energus_10.webp" alt="Logo de la marque energus10 – client accompagné"
-                class="w-10 h-10 rounded-full border-2 border-white object-cover">
-            </div>
-
-            <!-- 📣 Texte avec étoiles lisibles -->
-
-            <div class="flex items-center gap-1 text-sm font-semibold font-nunito text-[#25353f] ml-2">
-              <span class="inline-block bg-white border border-[#d6d3cc] rounded-full px-1.5">⭐⭐⭐⭐⭐</span>
-              <span class="ml-1">+10 entrepreneurs soulagés</span>
-            </div>
+          <!-- 📣 Texte avec étoiles lisibles -->
+          <div class="flex items-center gap-1 text-sm font-semibold font-nunito text-[#25353f] ml-2">
+            <span class="inline-block bg-white border border-[#d6d3cc] rounded-full px-1.5">⭐⭐⭐⭐⭐</span>
+            <span class="ml-1">+10 entrepreneurs soulagés</span>
           </div>
         </div>
-
-        <!-- ➡️ Colonne droite : Image de transformation -->
-
-        <div class="flex justify-center lg:col-span-2">
-          <img src="/assets/img/hero-offre-signature.webp"
-            alt="Entrepreneur·e tapant sur un ordinateur avec réactions sociales – solution clés en main pour réseaux sociaux"
-            class="rounded-2xl shadow-xl w-full max-w-md lg:max-w-full object-cover">
-        </div>
       </div>
-    </section>
+
+      <!-- ➡️ Colonne droite : Image de transformation -->
+      <div id="hero-img-col" class="flex justify-center lg:col-span-2 opacity-0">
+        <img src="/assets/img/hero-offre-signature.webp"
+          alt="Entrepreneur·e tapant sur un ordinateur avec réactions sociales – solution clés en main pour réseaux sociaux"
+          class="rounded-2xl shadow-xl w-full max-w-md lg:max-w-full object-cover">
+      </div>
+    </div>
+  </section>
 
     <!-- 🚨 SECTION PROBLÈME -->
+  <section id="probleme" class="scroll-adjust bg-white text-[#25353f] py-24 px-6 lg:px-12">
+    <div class="max-w-4xl mx-auto text-center">
 
-    <section id="probleme" class="scroll-adjust bg-white text-[#25353f] py-24 px-6 lg:px-12">
-      <div class="max-w-4xl mx-auto text-center">
+      <!-- 🎯 Titre -->
+      <h2 id="probleme-title" class="text-3xl lg:text-4xl font-extrabold font-montserrat mb-12 leading-tight opacity-0">
+        Vous jonglez déjà avec
+        <span class="text-[#c78a5c] font-extrabold">1000 choses</span>.
+        <br>
+        Et pourtant, on attend de vous d’être aussi
+        <span class="text-[#c78a5c] font-extrabold">stratège</span>
+        et
+        <span class="text-[#7ea1c4] font-extrabold">créateur de contenu</span>.
+      </h2>
 
-        <!-- 🎯 Titre -->
-
-        <h2 class="text-3xl lg:text-4xl font-extrabold font-montserrat mb-12 leading-tight"> Vous jonglez déjà avec
-          <span class="text-[#c78a5c] font-extrabold">1000 choses</span>. <br> Et pourtant, on attend de vous d’être
-          aussi <span class="text-[#c78a5c] font-extrabold">stratège</span> et <span
-            class="text-[#7ea1c4] font-extrabold">créateur de contenu</span>.
-        </h2>
-
-        <!-- 🟠 Liste de symptômes avec icône -->
-
-        <div class="max-w-xl mx-auto text-left">
-          <ul class="space-y-5 text-lg font-nunito">
-            <li class="flex items-start gap-3 leading-relaxed">
-              <i class="w-6 h-6 mt-1 text-[#c78a5c] shrink-0" data-lucide="x-circle"></i>
-              <p class="m-0">Vous publiez <span class="font-extrabold">à la dernière minute</span>, sans savoir si ça a
-                un impact. </p>
-            </li>
-            <li class="flex items-start gap-3 leading-relaxed">
-              <i class="w-6 h-6 mt-1 text-[#c78a5c] shrink-0" data-lucide="x-circle"></i>
-              <p class="m-0">Vous avez l’impression de <span class="font-extrabold">parler dans le vide</span>… ou de
-                <span class="font-extrabold">tourner en rond</span>.
-              </p>
-            </li>
-            <li class="flex items-start gap-3 leading-relaxed">
-              <i class="w-6 h-6 mt-1 text-[#c78a5c] shrink-0" data-lucide="x-circle"></i>
-              <p class="m-0">Votre image ne reflète pas <span class="font-extrabold">le sérieux</span> de ce que vous
-                proposez. </p>
-            </li>
-            <li class="flex items-start gap-3 leading-relaxed">
-              <i class="w-6 h-6 mt-1 text-[#c78a5c] shrink-0" data-lucide="x-circle"></i>
-              <p class="m-0">Vous êtes <span class="font-extrabold">seul face aux algos</span>, aux commentaires, au
-                manque de temps. </p>
-            </li>
-          </ul>
-        </div>
-
-        <!-- 💬 Bloc info empathique -->
-
-        <div
-          class="bg-[#f5f1e6] mt-12 px-6 py-5 rounded-xl border border-[#e0ddd7] text-base font-nunito max-w-2xl mx-auto text-[#25353f] leading-relaxed">
-          Vous n’êtes pas censé tout savoir faire seul. <br /> Les réseaux exigent une clarté, une énergie, une rigueur
-          que personne ne peut maintenir en mode pilote automatique. <br />
-          <span class="italic">C’est là qu’on entre en scène — <span class="font-extrabold">pour que vos efforts payent,
-              enfin</span>. </span>
-        </div>
-        <div class="mt-8 text-center">
-          <a href="#cta" onclick="sa_event('click_cta_probleme')"
-            class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-6 rounded-lg text-base shadow hover:scale-[1.03] active:scale-[0.98]">
-            😳 Mais… c’est moi ça. Je réserve mon appel découverte offert. </a>
-        </div>
+      <!-- 🟠 Liste de symptômes avec icône -->
+      <div class="max-w-xl mx-auto text-left">
+        <ul class="space-y-5 text-lg font-nunito">
+          <li id="probleme-item-1" class="flex items-start gap-3 leading-relaxed opacity-0">
+            <i class="w-6 h-6 mt-1 text-[#c78a5c] shrink-0" data-lucide="x-circle" aria-hidden="true"></i>
+            <p class="m-0">Vous publiez <span class="font-extrabold">à la dernière minute</span>, sans savoir si ça a un impact. </p>
+          </li>
+          <li id="probleme-item-2" class="flex items-start gap-3 leading-relaxed opacity-0">
+            <i class="w-6 h-6 mt-1 text-[#c78a5c] shrink-0" data-lucide="x-circle" aria-hidden="true"></i>
+            <p class="m-0">Vous avez l’impression de <span class="font-extrabold">parler dans le vide</span>… ou de
+              <span class="font-extrabold">tourner en rond</span>.
+            </p>
+          </li>
+          <li id="probleme-item-3" class="flex items-start gap-3 leading-relaxed opacity-0">
+            <i class="w-6 h-6 mt-1 text-[#c78a5c] shrink-0" data-lucide="x-circle" aria-hidden="true"></i>
+            <p class="m-0">Votre image ne reflète pas <span class="font-extrabold">le sérieux</span> de ce que vous proposez. </p>
+          </li>
+          <li id="probleme-item-4" class="flex items-start gap-3 leading-relaxed opacity-0">
+            <i class="w-6 h-6 mt-1 text-[#c78a5c] shrink-0" data-lucide="x-circle" aria-hidden="true"></i>
+            <p class="m-0">Vous êtes <span class="font-extrabold">seul face aux algos</span>, aux commentaires, au manque de temps. </p>
+          </li>
+        </ul>
       </div>
-    </section>
+
+      <!-- 💬 Bloc info empathique -->
+      <div
+        id="probleme-note"
+        class="bg-[#f5f1e6] mt-12 px-6 py-5 rounded-xl border border-[#e0ddd7] text-base font-nunito max-w-2xl mx-auto text-[#25353f] leading-relaxed opacity-0">
+        Vous n’êtes pas censé tout savoir faire seul. <br /> Les réseaux exigent une clarté, une énergie, une rigueur
+        que personne ne peut maintenir en mode pilote automatique. <br />
+        <span class="italic">C’est là qu’on entre en scène — <span class="font-extrabold">pour que vos efforts payent,
+            enfin</span>. </span>
+      </div>
+      <div class="mt-8 text-center">
+        <a id="probleme-cta" href="#cta" onclick="sa_event('click_cta_probleme')"
+          class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-6 rounded-lg text-base shadow hover:scale-[1.03] active:scale-[0.98] opacity-0">
+          😳 Mais… c’est moi ça. Je réserve mon appel découverte offert.
+        </a>
+      </div>
+    </div>
+  </section>
 
     <!-- 🧭 SECTION SOLUTION -->
+  <section id="solution" class="scroll-adjust bg-[#f5f1e6] text-[#25353f] pt-12 pb-24 px-6 lg:px-12">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
 
-    <section id="solution" class="scroll-adjust bg-[#f5f1e6] text-[#25353f] pt-12 pb-24 px-6 lg:px-12">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+      <!-- 🧠 Texte à gauche -->
+      <div>
+        <h2 id="solution-title" class="text-3xl lg:text-4xl font-extrabold font-montserrat mb-6 opacity-0">
+          Deux regards, une vision : <br /> faire
+          de vos réseaux un véritable <span class="text-[#c78a5c] font-extrabold">moteur pour votre activité</span>.
+        </h2>
+        <p id="solution-p1" class="text-lg font-nunito mb-6 opacity-0">
+          Nous, c’est Thibaud et Zoé Beckrich. Frère et sœur, duo stratégique et créatif. <br />
+          Depuis plus de <span class="font-semibold">10 ans</span> cumulés, on aide les entreprises à
+          <span class="font-extrabold">reprendre le contrôle sur leurs réseaux</span> pour construire
+          <span class="font-extrabold">une communication claire, alignée et qui fait avancer leur activité</span>.
+        </p>
+        <p id="solution-p2" class="text-lg font-nunito mb-6 opacity-0">
+          On a vu des projets brillants échouer — non par manque d’idée, mais par absence de
+          <span class="font-semibold">vision, méthode, ou cohérence de marque</span>. C’est précisément ce
+          qu’on refuse.
+        </p>
+        <p id="solution-p3" class="text-lg font-nunito mb-6 opacity-0">
+          Notre force ? Un <span class="font-extrabold text-[#7ea1c4]">regard croisé</span> constant : stratégie, contenu, analyse. <br />
+          Une <span class="font-extrabold">vision complète</span>, à la fois stratégique, créative et ancrée dans la réalité du terrain.
+        </p>
+        <p id="solution-p4" class="text-lg font-nunito mb-6 opacity-0">
+          On accompagne peu de clients à la fois — mais à fond, avec une conviction : <br />
+          votre communication ne doit jamais trahir <span class="font-extrabold">qui vous êtes</span>, ni
+          <span class="font-extrabold">ce que vous vendez</span>.
+        </p>
 
-        <!-- 🧠 Texte à gauche -->
-
-        <div>
-          <h2 class="text-3xl lg:text-4xl font-extrabold font-montserrat mb-6"> Deux regards, une vision : <br /> faire
-            de vos réseaux un véritable <span class="text-[#c78a5c] font-extrabold">moteur pour votre activité</span>.
-          </h2>
-          <p class="text-lg font-nunito mb-6"> Nous, c’est Thibaud et Zoé Beckrich. Frère et sœur, duo stratégique et
-            créatif. <br /> Depuis plus de <span class="font-semibold">10 ans</span> cumulés, on aide les entreprises à
-            <span class="font-extrabold">reprendre le contrôle sur leurs réseaux</span> pour construire <span
-              class="font-extrabold">une communication claire, alignée et qui fait avancer leur activité</span>.
-          </p>
-          <p class="text-lg font-nunito mb-6"> On a vu des projets brillants échouer — non par manque d’idée, mais par
-            absence de <span class="font-semibold">vision, méthode, ou cohérence de marque</span>. C’est précisément ce
-            qu’on refuse. </p>
-          <p class="text-lg font-nunito mb-6"> Notre force ? Un <span class="font-extrabold text-[#7ea1c4]">regard
-              croisé</span> constant : stratégie, contenu, analyse. <br /> Une <span class="font-extrabold">vision
-              complète</span>, à la fois stratégique, créative et ancrée dans la réalité du terrain. </p>
-          <p class="text-lg font-nunito mb-6"> On accompagne peu de clients à la fois — mais à fond, avec une
-            conviction : <br /> votre communication ne doit jamais trahir <span class="font-extrabold">qui vous
-              êtes</span>, ni <span class="font-extrabold">ce que vous vendez</span>. </p>
-
-          <!-- Bloc citation -->
-
-          <div class="bg-white border-l-4 border-[#c78a5c] p-5 text-base font-nunito shadow-sm rounded-r-md italic">
-            Notre rôle, ce n’est pas juste de “gérer vos réseaux”. <br /> C’est de prendre en main votre communication
-            avec exigence, respect et clarté. <br /> Pour que vous sachiez <span class="font-extrabold">où vous allez,
-              et pourquoi</span>. </div>
-
-          <!-- 🔘 Bouton émotionnel section "Solution" -->
-
-          <div class="mt-8 text-center">
-            <a href="#cta" onclick="sa_event('click_cta_solution')"
-              class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-6 rounded-lg text-base shadow hover:scale-[1.03] active:scale-[0.98]">
-              👏 Wow ! J’ai trouvé mon duo : Je réserve mon appel </a>
-          </div>
+        <!-- Bloc citation -->
+        <div id="solution-quote"
+          class="bg-white border-l-4 border-[#c78a5c] p-5 text-base font-nunito shadow-sm rounded-r-md italic opacity-0">
+          Notre rôle, ce n’est pas juste de “gérer vos réseaux”. <br />
+          C’est de prendre en main votre communication avec exigence, respect et clarté. <br />
+          Pour que vous sachiez <span class="font-extrabold">où vous allez, et pourquoi</span>.
         </div>
 
-        <!-- 👁 Visuel équipe -->
-
-        <div class="flex justify-center">
-          <img src="assets/img/solution-equipe_parallax.webp"
-            alt="Thibaud et Zoé Beckrich - L'équipe Parallax - La solution pour vos réseaux sociaux"
-            class="w-full max-w-md lg:max-w-full object-cover">
-
-          <!-- Remplace ce visuel par ton duo en bonne qualité -->
-
+        <!-- 🔘 Bouton émotionnel section "Solution" -->
+        <div class="mt-8 text-center">
+          <a id="solution-cta" href="#cta" onclick="sa_event('click_cta_solution')"
+            class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-6 rounded-lg text-base shadow hover:scale-[1.03] active:scale-[0.98] opacity-0">
+            👏 Wow ! J’ai trouvé mon duo : Je réserve mon appel
+          </a>
         </div>
       </div>
-    </section>
+
+      <!-- 👁 Visuel équipe -->
+      <div id="solution-img-col" class="flex justify-center opacity-0">
+        <img src="assets/img/solution-equipe_parallax.webp"
+          alt="Thibaud et Zoé Beckrich - L'équipe Parallax - La solution pour vos réseaux sociaux"
+          class="w-full max-w-md lg:max-w-full object-cover rounded-2xl">
+        <!-- Remplace ce visuel par ton duo en bonne qualité -->
+      </div>
+    </div>
+  </section>
 
     <!-- 🎁 SECTION BÉNÉFICES -->
+  <section id="benefices" class="scroll-adjust bg-[#f0f4f9] text-[#25353f] py-24 px-6 lg:px-12">
+    <div class="max-w-6xl mx-auto text-center">
 
-    <section id="benefices" class="scroll-adjust bg-[#f0f4f9] text-[#25353f] py-24 px-6 lg:px-12">
-      <div class="max-w-6xl mx-auto text-center">
+      <!-- 🎯 Titre principal -->
+      <h2 id="benefices-title" class="text-3xl lg:text-4xl font-extrabold font-montserrat mb-16 leading-tight opacity-0">
+        Ce que ça change, <span class="text-[#c78a5c]">pour de vrai</span>.
+      </h2>
 
-        <!-- 🎯 Titre principal -->
+      <!-- 📦 Carte contenant les 3 bénéfices -->
+      <div class="bg-white rounded-2xl shadow-lg p-10 md:p-14">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
 
-        <h2 class="text-3xl lg:text-4xl font-extrabold font-montserrat mb-16 leading-tight"> Ce que ça change, <span
-            class="text-[#c78a5c]">pour de vrai</span>. </h2>
-
-        <!-- 📦 Carte contenant les 3 bénéfices -->
-
-        <div class="bg-white rounded-2xl shadow-lg p-10 md:p-14">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-
-            <!-- 🔹 Bénéfice 1 -->
-
-            <div class="flex flex-col items-center ">
-              <div class="bg-[#7ea1c4] p-4 rounded-full mb-6">
-                <i data-lucide="clock" class="w-6 h-6 text-white"></i>
-              </div>
-              <h3 class="text-xl font-extrabold mb-2 font-montserrat"> Du temps en plus, <br>
-                <span class="text-[#7ea1c4]">sans la charge mentale</span>.
-              </h3>
-              <p class="text-base font-nunito leading-relaxed"> Vous ne publiez plus <span class="font-bold">dans
-                  l’urgence</span>. <br> On gère vos réseaux — <span class="font-bold">vous reprenez le contrôle</span>
-                sur vos journées. </p>
+          <!-- 🔹 Bénéfice 1 -->
+          <div id="benefices-col-1" class="flex flex-col items-center opacity-0">
+            <div class="bg-[#7ea1c4] p-4 rounded-full mb-6">
+              <i data-lucide="clock" class="w-6 h-6 text-white"></i>
             </div>
+            <h3 class="text-xl font-extrabold mb-2 font-montserrat">
+              Du temps en plus, <br>
+              <span class="text-[#7ea1c4]">sans la charge mentale</span>.
+            </h3>
+            <p class="text-base font-nunito leading-relaxed">
+              Vous ne publiez plus <span class="font-bold">dans l’urgence</span>. <br>
+              On gère vos réseaux — <span class="font-bold">vous reprenez le contrôle</span> sur vos journées.
+            </p>
+          </div>
 
-            <!-- 🔹 Bénéfice 2 -->
-
-            <div class="flex flex-col items-center">
-              <div class="bg-[#c78a5c] p-4 rounded-full mb-6">
-                <i data-lucide="megaphone" class="w-6 h-6 text-white"></i>
-              </div>
-              <h3 class="text-xl font-extrabold mb-2 font-montserrat"> Une image pro, <br>
-                <span class="text-[#c78a5c]">fidèle à qui vous êtes</span>.
-              </h3>
-              <p class="text-base font-nunito leading-relaxed"> Votre communication reflète enfin <span
-                  class="font-bold">votre niveau de service</span>, vos valeurs, votre ton. <br> Bref&nbsp;: c’est <span
-                  class="font-bold">cohérent</span>, et ça <span class="font-bold">vous ressemble</span>. </p>
+          <!-- 🔹 Bénéfice 2 -->
+          <div id="benefices-col-2" class="flex flex-col items-center opacity-0">
+            <div class="bg-[#c78a5c] p-4 rounded-full mb-6">
+              <i data-lucide="megaphone" class="w-6 h-6 text-white"></i>
             </div>
+            <h3 class="text-xl font-extrabold mb-2 font-montserrat">
+              Une image pro, <br>
+              <span class="text-[#c78a5c]">fidèle à qui vous êtes</span>.
+            </h3>
+            <p class="text-base font-nunito leading-relaxed">
+              Votre communication reflète enfin <span class="font-bold">votre niveau de service</span>, vos valeurs, votre ton. <br>
+              Bref&nbsp;: c’est <span class="font-bold">cohérent</span>, et ça <span class="font-bold">vous ressemble</span>.
+            </p>
+          </div>
 
-            <!-- 🔹 Bénéfice 3 -->
-
-            <div class="flex flex-col items-center">
-              <div class="bg-[#7ea1c4] p-4 rounded-full mb-6">
-                <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
-              </div>
-              <h3 class="text-xl font-extrabold mb-2 font-montserrat"> Des résultats visibles, <br>
-                <span class="text-[#7ea1c4]">pas juste des likes</span>.
-              </h3>
-              <p class="text-base font-nunito leading-relaxed"> Plus d’engagement, plus de messages, <span
-                  class="font-bold">plus de clients</span>&nbsp;: <br> vos réseaux deviennent enfin <span
-                  class="font-bold">un vrai levier business</span>. </p>
+          <!-- 🔹 Bénéfice 3 -->
+          <div id="benefices-col-3" class="flex flex-col items-center opacity-0">
+            <div class="bg-[#7ea1c4] p-4 rounded-full mb-6">
+              <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
             </div>
+            <h3 class="text-xl font-extrabold mb-2 font-montserrat">
+              Des résultats visibles, <br>
+              <span class="text-[#7ea1c4]">pas juste des likes</span>.
+            </h3>
+            <p class="text-base font-nunito leading-relaxed">
+              Plus d’engagement, plus de messages, <span class="font-bold">plus de clients</span>&nbsp;: <br>
+              vos réseaux deviennent enfin <span class="font-bold">un vrai levier business</span>.
+            </p>
           </div>
         </div>
-
-        <!-- 🎯 Bouton d’intention post-bénéfices -->
-
-        <div class="mt-12">
-          <a href="#cta" onclick="sa_event('click_cta_benefices')"
-            class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-6 rounded-lg text-base shadow hover:scale-[1.03] active:scale-[0.98]">
-            Je veux tout ça. Je réserve mon appel découverte offert </a>
-        </div>
       </div>
-    </section>
+
+      <!-- 🎯 Bouton d’intention post-bénéfices -->
+      <div class="mt-12">
+        <a id="benefices-cta" href="#cta" onclick="sa_event('click_cta_benefices')"
+          class="inline-block bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-6 rounded-lg text-base shadow hover:scale-[1.03] active:scale-[0.98] opacity-0">
+          Je veux tout ça. Je réserve mon appel découverte offert
+        </a>
+      </div>
+    </div>
+  </section>
 
     <!-- 🛠️ SECTION PLAN D’ACTION -->
+  <section id="plan" class="scroll-adjust bg-white text-[#25353f] py-24 px-6 lg:px-12">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 items-start gap-16">
 
-    <section id="plan" class="scroll-adjust bg-white text-[#25353f] py-24 px-6 lg:px-12">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid lg:grid-cols-2 items-start gap-16">
+        <!-- Colonne gauche : étapes du plan -->
+        <div class="space-y-12">
 
-          <!-- Colonne gauche -->
+          <h2 id="plan-title" class="text-3xl lg:text-4xl font-bold font-montserrat mb-6 opacity-0">
+            Comment ça se passe <span class="text-[#7ea1c4]">concrètement&nbsp;?</span>
+          </h2>
 
-          <div class="space-y-12">
-            <h2 class="text-3xl lg:text-4xl font-bold font-montserrat mb-6"> Comment ça se passe <span
-                class="text-[#7ea1c4]">concrètement&nbsp;?</span>
-            </h2>
-
-            <!-- Étape 1 -->
-
-            <div>
-              <div class="text-[#7ea1c4] text-3xl font-bold font-montserrat mb-1">01</div>
-              <h3 class="text-xl font-bold mb-2 font-montserrat"> Réservez votre appel découverte </h3>
-              <p class="text-base font-nunito leading-relaxed"> On discute gratuitement de votre <span
-                  class="font-bold text-[#7ea1c4]">présence en ligne</span>, de ce qui coince et de ce que vous visez.
-                <br /> C’est <span class="text-[#c78a5c] font-semibold">sans engagement</span>, mais ça <span
-                  class="font-bold">pose enfin les bases</span>.
-              </p>
-            </div>
-
-            <!-- Étape 2 -->
-
-            <div>
-              <div class="text-[#c78a5c] text-3xl font-bold font-montserrat mb-1">02</div>
-              <h3 class="text-xl font-bold mb-2 font-montserrat"> On construit (et déploie) votre stratégie </h3>
-              <p class="text-base font-nunito leading-relaxed"> Pendant 90 jours, on prend <span
-                  class="text-[#7ea1c4] font-semibold">les rênes de vos réseaux</span> : stratégie, contenus,
-                publications, interactions. <br />
-                <span class="font-bold">Vous validez</span>, on avance. <em>Ensemble.</em>
-              </p>
-            </div>
-
-            <!-- Étape 3 -->
-
-            <div>
-              <div class="text-[#7ea1c4] text-3xl font-bold font-montserrat mb-1">03</div>
-              <h3 class="text-xl font-bold mb-2 font-montserrat"> Vos réseaux bossent (enfin) pour vous </h3>
-              <p class="text-base font-nunito leading-relaxed"> Moins de <span class="font-semibold">charge
-                  mentale</span>, plus de <span class="font-semibold">clarté</span>, plus de <span
-                  class="font-semibold">clients</span>. <br /> Votre communication devient <span
-                  class="text-[#c78a5c] font-semibold">un outil qui sert vraiment votre activité</span>. </p>
-            </div>
+          <!-- Étape 1 -->
+          <div id="plan-step-1" class="opacity-0">
+            <div class="text-[#7ea1c4] text-3xl font-bold font-montserrat mb-1">01</div>
+            <h3 class="text-xl font-bold mb-2 font-montserrat">Réservez votre appel découverte</h3>
+            <p class="text-base font-nunito leading-relaxed">
+              On discute gratuitement de votre <span class="font-bold text-[#7ea1c4]">présence en ligne</span>,
+              de ce qui coince et de ce que vous visez.<br />
+              C’est <span class="text-[#c78a5c] font-semibold">sans engagement</span>, mais ça
+              <span class="font-bold">pose enfin les bases</span>.
+            </p>
           </div>
 
-          <!-- Colonne droite -->
+          <!-- Étape 2 -->
+          <div id="plan-step-2" class="opacity-0">
+            <div class="text-[#c78a5c] text-3xl font-bold font-montserrat mb-1">02</div>
+            <h3 class="text-xl font-bold mb-2 font-montserrat">On construit (et déploie) votre stratégie</h3>
+            <p class="text-base font-nunito leading-relaxed">
+              Pendant 90 jours, on prend <span class="text-[#7ea1c4] font-semibold">les rênes de vos réseaux</span> : stratégie, contenus, publications, interactions.<br />
+              <span class="font-bold">Vous validez</span>, on avance. <em>Ensemble.</em>
+            </p>
+          </div>
 
-          <div class="h-full">
-            <img src="/assets/img/plan-illustration_3d.webp"
-              alt="Illustration 3D d'une cible marketing atteinte par des flèches, entourée d'une ampoule et d'un mégaphone, symbolisant une stratégie de communication digitale efficace"
-              class="rounded-2xl shadow-xl w-full h-full object-cover">
+          <!-- Étape 3 -->
+          <div id="plan-step-3" class="opacity-0">
+            <div class="text-[#7ea1c4] text-3xl font-bold font-montserrat mb-1">03</div>
+            <h3 class="text-xl font-bold mb-2 font-montserrat">Vos réseaux bossent (enfin) pour vous</h3>
+            <p class="text-base font-nunito leading-relaxed">
+              Moins de <span class="font-semibold">charge mentale</span>, plus de <span class="font-semibold">clarté</span>, plus de <span class="font-semibold">clients</span>.<br />
+              Votre communication devient <span class="text-[#c78a5c] font-semibold">un outil qui sert vraiment votre activité</span>.
+            </p>
           </div>
         </div>
+
+        <!-- Colonne droite : Illustration -->
+        <div class="h-full flex items-center opacity-0" id="plan-img-col">
+          <img src="/assets/img/plan-illustration_3d.webp"
+            alt="Illustration 3D d'une cible marketing atteinte par des flèches, entourée d'une ampoule et d'un mégaphone, symbolisant une stratégie de communication digitale efficace"
+            class="rounded-2xl shadow-xl w-full h-full object-cover">
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- 🌟 SECTION TÉMOIGNAGES -->
+  <section id="temoignages" class="scroll-adjust bg-[#25353f] text-[#f5f1e6] py-24 px-6 lg:px-12">
+    <div class="max-w-6xl mx-auto">
 
-    <section id="temoignages" class="scroll-adjust bg-[#25353f] text-[#f5f1e6] py-24 px-6 lg:px-12">
-      <div class="max-w-6xl mx-auto">
+      <!-- 🎯 Titre principal -->
+      <div class="text-center mb-16">
+        <h2 id="temoignages-title" class="text-3xl lg:text-4xl font-bold font-montserrat mb-4 opacity-0">
+          Ils ont arrêté de <span class="text-[#c78a5c]">subir</span> leurs réseaux.
+        </h2>
+        <p id="temoignages-subtitle" class="text-base font-nunito text-[#d8d8d8] opacity-0">
+          Ils avaient la tête sous l’eau. Aujourd’hui, leurs réseaux tournent, et leurs clients arrivent.
+        </p>
+      </div>
 
-        <!-- 🎯 Titre principal -->
+      <!-- 🧹 Grille asymétrique -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
-        <div class="text-center mb-16">
-          <h2 class="text-3xl lg:text-4xl font-bold font-montserrat mb-4"> Ils ont arrêté de <span
-              class="text-[#c78a5c]">subir</span> leurs réseaux. </h2>
-          <p class="text-base font-nunito text-[#d8d8d8]"> Ils avaient la tête sous l’eau. Aujourd’hui, leurs réseaux
-            tournent, et leurs clients arrivent. </p>
-        </div>
-
-        <!-- 🧹 Grille asymétrique -->
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <!-- 💬 Colonne gauche : Témoignage HÉRO + avatars -->
+        <div class="h-full flex flex-col justify-between">
 
           <!-- 💬 Témoignage HÉRO -->
-
-          <div class="h-full flex flex-col justify-between">
-
-            <!-- 💬 Témoignage HÉRO -->
-
-            <div class="h-full flex flex-col justify-between">
-              <div class="flex items-center h-full">
-                <div
-                  class="bg-[#36424d] border border-[#3f4a55] hover:shadow-2xl transition-shadow duration-300 ease-in-out border-l-4 border-l-[#c78a5c] p-6 rounded-2xl shadow-lg text-left w-full h-full flex flex-col">
-
-                  <!-- Titre fixe en haut -->
-
-                  <div class="mb-4">
-                    <p class="text-3xl font-extrabold text-[#c78a5c] uppercase">+300% de leads en 2 mois</p>
-                  </div>
-
-                  <!-- Texte centré entre titre et signature -->
-
-                  <div class="flex-grow flex flex-col justify-center">
-                    <p class="text-lg font-nunito italic leading-relaxed mb-4"> “Avant, je postais quand j’avais le
-                      temps. C’était stressant, brouillon… et inutile.” </p>
-                    <p class="text-lg font-nunito italic leading-relaxed mb-4"> “Avec Thibaud et Zoé, j’ai posé une
-                      vraie stratégie. Je sais quoi dire, quand, et pourquoi. Aujourd’hui, je reçois des messages chaque
-                      semaine de clients vraiment intéressés.” </p>
-                    <p class="text-sm text-[#c2c2c2]">Avant : 1 message / mois → Après : 3 à 5 demandes qualifiées par
-                      semaines</p>
-                  </div>
-
-                  <!-- Signature toujours en bas -->
-
-                  <div class="flex items-center gap-3 mt-6">
-                    <img src="/assets/img/logo-dolorium_tattoo.webp"
-                      alt="Logo de Dolorium Tattoo - Un client satisfait par notre accompagnement"
-                      class="w-12 h-12 rounded-full border-2 border-white object-cover">
-                    <div>
-                      <p class="font-bold">Arnaud F.</p>
-                      <p class="text-sm text-[#c2c2c2]">Tatoueur - Dolorium Tattoo</p>
-                      <p class="text-xs text-[#fcd34d] mt-1">⭐⭐⭐⭐⭐</p>
-                    </div>
-                  </div>
+          <div id="temoignage-hero" class="h-full flex flex-col justify-between opacity-0">
+            <div class="flex items-center h-full">
+              <div class="bg-[#36424d] border border-[#3f4a55] hover:shadow-2xl transition-shadow duration-300 ease-in-out border-l-4 border-l-[#c78a5c] p-6 rounded-2xl shadow-lg text-left w-full h-full flex flex-col">
+                <!-- Titre -->
+                <div class="mb-4">
+                  <p id="temoignage-hero-title" class="text-3xl font-extrabold text-[#c78a5c] uppercase opacity-0">+300% de leads en 2 mois</p>
                 </div>
-              </div>
-            </div>
-
-            <!-- 🔗 Bloc avatars clients + badge (option 2 avec fond orange 50%) -->
-
-            <div
-              class="mt-8 bg-[#c78a5c]/40 border border-[#edd3be]/20 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center flex flex-col justify-between">
-              <div class="flex items-center gap-4 justify-center flex-wrap text-center">
-                <div class="flex -space-x-4">
-                  <img src="/assets/img/logo-panadis.webp" alt="Logo de l'enreprise Panadis – client accompagné"
-                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
-                  <img src="/assets/img/logo-times.webp" alt="Logo de l'enreprise Time's – client accompagné"
-                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
-                  <img src="/assets/img/logo-aja.webp" alt="Logo de la marque Aujourd'hui j'arrête – client accompagné"
-                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
+                <!-- Texte -->
+                <div class="flex-grow flex flex-col justify-center">
+                  <p id="temoignage-hero-txt1" class="text-lg font-nunito italic leading-relaxed mb-4 opacity-0">
+                    “Avant, je postais quand j’avais le temps. C’était stressant, brouillon… et inutile.”
+                  </p>
+                  <p id="temoignage-hero-txt2" class="text-lg font-nunito italic leading-relaxed mb-4 opacity-0">
+                    “Avec Thibaud et Zoé, j’ai posé une vraie stratégie. Je sais quoi dire, quand, et pourquoi. Aujourd’hui, je reçois des messages chaque semaine de clients vraiment intéressés.”
+                  </p>
+                  <p id="temoignage-hero-detail" class="text-sm text-[#c2c2c2] opacity-0">
+                    Avant : 1 message / mois → Après : 3 à 5 demandes qualifiées par semaines
+                  </p>
+                </div>
+                <!-- Signature -->
+                <div id="temoignage-hero-client" class="flex items-center gap-3 mt-6 opacity-0">
                   <img src="/assets/img/logo-dolorium_tattoo.webp"
-                    alt="Logo de l'indépendant Dolorium Tattoo – client accompagné"
-                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
-                  <img src="/assets/img/logo-la_fine_equipe.webp"
-                    alt="Logo de la marque La Fine Équipe – client accompagné"
-                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
-                  <img src="assets/img/logo-energus_10.webp" alt="Logo de la marque energus10 – client accompagné"
-                    class="w-10 h-10 rounded-full border-2 border-white object-cover">
-                </div>
-                <span class="inline-block bg-[#7ea1c4] text-white text-xs font-semibold px-3 py-1 rounded-full">+10
-                  entrepreneurs soulagés</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 📋 Colonne droite : 2 témoignages empilés -->
-
-          <div class="flex flex-col gap-8 h-full">
-
-            <!-- Témoignage 2 -->
-
-            <div
-              class="bg-[#36424d] border border-[#3f4a55] p-6 rounded-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out shadow text-left flex flex-col h-full relative">
-
-              <!-- Icône -->
-
-              <div
-                class="absolute -top-4 -left-4 bg-[#c78a5c] text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-quote">
-                  <path
-                    d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
-                  <path
-                    d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
-                </svg>
-              </div>
-
-              <!-- Titre -->
-
-              <p class="text-xl font-extrabold text-[#c78a5c] uppercase mb-4">Une méthode qui tient</p>
-
-              <!-- Citation centrée -->
-
-              <div class="flex-grow flex items-center">
-                <p class="text-base font-nunito leading-relaxed italic"> “J’ai enfin arrêté d’improviser. On a fixé une
-                  stratégie, des contenus clairs, et un rythme réaliste. Ça tient, ça tourne, et je gagne du temps
-                  chaque semaine.” </p>
-              </div>
-
-              <!-- Signature -->
-
-              <div class="flex items-center gap-3 mt-6">
-                <img src="/assets/img/logo-panadis.webp"
-                  alt="Logo de Panadis - Entreprise accompagnée et satisfaite de notre méthode"
-                  class="w-12 h-12 rounded-full border-2 border-white object-cover">
-                <div>
-                  <p class="font-bold">Patrick B.</p>
-                  <p class="text-sm text-[#c2c2c2]">Co-fondateur de Panadis</p>
-                  <p class="text-xs text-[#fcd34d] mt-1">⭐⭐⭐⭐⭐</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Témoignage 3 -->
-
-            <div
-              class="bg-[#36424d] border border-[#3f4a55] p-6 rounded-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out shadow text-left flex flex-col h-full relative">
-
-              <!-- Icône -->
-
-              <div
-                class="absolute -top-4 -left-4 bg-[#c78a5c] text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-quote">
-                  <path
-                    d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
-                  <path
-                    d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
-                </svg>
-              </div>
-
-              <!-- Titre -->
-
-              <p class="text-xl font-extrabold text-[#c78a5c] uppercase mb-4">Clarté & cohérence</p>
-
-              <!-- Citation centrée -->
-
-              <div class="flex-grow flex items-center">
-                <p class="text-base font-nunito leading-relaxed italic"> “Avant, je communiquais sans trop savoir où
-                  j’allais. Ensemble, on a tout aligné. Mon audience comprend mon message — et moi aussi.” </p>
-              </div>
-
-              <!-- Signature -->
-
-              <div class="flex items-center gap-3 mt-6">
-                <img src="/assets/img/logo-la_fine_equipe.webp"
-                  alt="Logo de La Fine Équipe, marque qui a retrouvé clarté et cohérence pour ses réseaux sociaux avec l'accompagnement de Parallax"
-                  class="w-12 h-12 rounded-full border-2 border-white object-cover">
-                <div>
-                  <p class="font-bold">Martial L.</p>
-                  <p class="text-sm text-[#c2c2c2]">Co-gérant de La Fine Équipe</p>
-                  <p class="text-xs text-[#fcd34d] mt-1">⭐⭐⭐⭐⭐</p>
+                    alt="Logo de Dolorium Tattoo - Un client satisfait par notre accompagnement"
+                    class="w-12 h-12 rounded-full border-2 border-white object-cover">
+                  <div>
+                    <p class="font-bold">Arnaud F.</p>
+                    <p class="text-sm text-[#c2c2c2]">Tatoueur - Dolorium Tattoo</p>
+                    <p class="text-xs text-[#fcd34d] mt-1">⭐⭐⭐⭐⭐</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- 🧲 LEAD MAGNET -->
-
-
-    <section id="freebie" class="scroll-adjust bg-white text-[#25353f] pt-12 pb-24 px-6 lg:px-12">
-      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-
-
-        <!-- Colonne gauche : Texte + formulaire -->
-
-        <div class="space-y-6">
-
-          <h2 class="text-3xl lg:text-4xl font-extrabold font-montserrat flex items-center gap-2">✨ Pas encore prêt·e
-            pour un appel ?</h2>
-          <p class="text-lg font-nunito">On vous a préparé un kit de survie express pour voir où vous en êtes et comment
-            avancer :</p>
-
-          <!-- Bloc bonus -->
-          <div
-            class="border border-[#7ea1c4]/50 border-l-4 border-[#7ea1c4] bg-white p-6 rounded-xl shadow-xl space-y-6">
-            <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
-              <p class="font-semibold text-[#25353f] mb-1">📘 Un guide PDF</p>
-              <p class="text-sm font-nunito text-[#4a4a4a]"><i>7 erreurs INVISIBLES qui SABOTENT ta visibilité - et comment les corriger sans sacrifier tes soirées</i></p>
-            </div>
-
-            <!-- Bloc Calendrier -->
-            <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
-              <p class="font-semibold text-[#25353f] mb-1">📅 Calendrier éditorial</p>
-              <p class="text-sm font-nunito text-[#4a4a4a]">Un modèle prêt à dupliquer pour organiser ta communication
-                sans charge mentale</p>
-            </div>
-
-            <!-- Bloc Idées de posts -->
-            <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
-              <p class="font-semibold text-[#25353f] mb-1">🖊 +100 idées de posts</p>
-              <p class="text-sm font-nunito text-[#4a4a4a]">Classées par objectif et type de contenu. Fini les manques d'inspiration.</p>
-            </div>
-          </div>
-          <p class="text-base font-nunito italic text-[#4a4a4a] justify-center">
-            Parfait si vous voulez faire le point, retrouver de la clarté, et poser les premières briques d’une com’ qui
-            vous ressemble.
-          </p>
-
-          <!-- Formulaire MailerLite -->
-          <form action="https://assets.mailerlite.com/jsonp/1452538/forms/152670669521291134/subscribe" method="post"
-            class="space-y-4" onsubmit="submitMailerLite(event)">
-            <div class="flex flex-col md:flex-row gap-4">
-              <input type="text" name="fields[name]" placeholder="Prénom"
-                class="w-full md:w-1/2 px-4 py-3 rounded-lg border border-[#ddd6cb] bg-[#f9f8f5] text-[#25353f] placeholder-[#999] font-nunito focus:outline-none focus:ring-2 focus:ring-[#7ea1c4]"
-                required>
-              <input type="email" name="fields[email]" placeholder="Email"
-                class="w-full md:w-1/2 px-4 py-3 rounded-lg border border-[#ddd6cb] bg-[#f9f8f5] text-[#25353f] placeholder-[#999] font-nunito focus:outline-none focus:ring-2 focus:ring-[#7ea1c4]"
-                required>
-              <input type="hidden" name="ml-submit" value="1">
-              <input type="hidden" name="anticsrf" value="true">
-            </div>
-            <button type="submit" onclick="sa_event('click_freebie_cta')"
-              class="w-full inline-block bg-[#7ea1c4] hover:bg-[#c78a5c] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-8 rounded-lg font-montserrat text-base shadow hover:scale-[1.03] active:scale-[0.98]">
-              📘 Je télécharge mon kit de survie social media offert
-            </button>
-          </form>
-
-          <!-- Message de confirmation -->
-          <div id="confirmation-message"
-            class="hidden bg-[#e6f5ec] text-[#2d6a4f] border border-[#b7e4c7] shadow-md rounded-xl p-6 font-nunito">
-            <h3 class="text-xl font-semibold mb-2">🎉 C’est en route !</h3>
-            <p class="mb-4">Votre kit de survie vient de décoller 🚀<br>
-              Vous allez le recevoir dans votre boîte mail dans les 2 prochaines minutes (pensez à vérifier les spams).
-            </p>
-            <p class="mb-4 italic">En attendant, respirez. Vous venez de poser un vrai premier pas vers une
-              communication plus claire, plus simple, plus stratégique.<br>
-              Et ça, c’est déjà énorme 👏</p>
-            <p class="text-sm mt-2">🧠 Si jamais vous voullez en parler de vive voix, vous pouvez réserver un appel
-              découverte juste en dessous.</p>
-          </div>
-
-          <!-- Message d'erreur -->
-          <div id="error-message"
-            class="hidden bg-red-50 text-red-800 border border-red-200 shadow-sm rounded-xl p-6 font-nunito">
-            <h3 class="text-xl font-semibold mb-2">⚠️ Oups, une erreur est survenue.</h3>
-            <p class="mb-2">Vérifiez bien votre email ou réessayez dans quelques instants.</p>
-            <p class="text-sm italic">Si le problème persiste, vous pouvez aussi nous écrire directement à <a
-                href="mailto:hello@chezparallax.fr">hello@chezparallax.fr</a> et on vous envoie ça au plus vite !".</p>
-          </div>
-
-          <p class="text-sm font-nunito text-[#999] text-center">📥 Vous recevrez tout dans votre boîte mail dans
-            quelques minutes.</p>
-        </div>
-
-        <!-- Colonne droite : Mockup responsive comme #solution -->
-        <div class="relative w-full aspect-[3/4] lg:max-w-md mx-auto">
-          <div class="absolute inset-0 flex items-center justify-center">
-            <img
-              src="/assets/img/illustration-freebie.webp"
-              alt="Kit de Survie Social Media par Parallax" class="w-full h-auto object-contain drop-shadow-xl">
-          </div>
-        </div>
-
-      </div>
-
-      <script>
-        function submitMailerLite(event) {
-          event.preventDefault(); // Empêche l’ouverture
-          const form = event.target;
-
-          fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            mode: 'no-cors' // important pour éviter les blocages CORS
-          }).then(() => {
-            document.getElementById('confirmation-message').classList.remove('hidden');
-            document.getElementById('error-message').classList.add('hidden');
-          }).catch(() => {
-            document.getElementById('error-message').classList.remove('hidden');
-            document.getElementById('confirmation-message').classList.add('hidden');
-          });
-        }
-      </script>
-
-
-    </section>
-
-
-
-    <!-- ❓ SECTION FAQ ACCORDÉON -->
-
-    <section id="faq" class="scroll-adjust bg-[#f5f1e6] text-[#25353f] py-24 px-6 lg:px-12">
-      <div class="max-w-4xl mx-auto">
-
-        <!-- 🎯 Titre + Sous-titre -->
-
-        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-4 font-montserrat"> On parie que <span
-            class="text-[#c78a5c]">vous</span> vous posez ces questions&nbsp;? </h2>
-        <p class="text-base text-center text-[#4a4a4a] max-w-2xl mx-auto mb-12 font-nunito"> Ce n’est pas juste vous.
-          Chaque entrepreneur qu’on accompagne a traversé ces hésitations. <br /> Et c’est normal&nbsp;: <span
-            class="font-semibold text-[#c78a5c]">investir dans sa communication</span>, ça mérite des réponses claires.
-        </p>
-        <div x-data="{ selected: null }" class="space-y-4">
-
-          <!-- QUESTION 1 -->
-
-          <div class="border-b border-[#dcd6c9] transition-all duration-500 ease-in-out">
-            <button @click="selected !== 1 ? selected = 1 : selected = null" onclick="sa_event('open_faq_q1')"
-              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Est-ce que ça va
-              vraiment marcher pour moi ? <span x-text="selected === 1 ? '-' : '+'"></span>
-            </button>
-            <div x-show="selected === 1" x-transition:enter="transition-all ease-out duration-500"
-              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
-              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave="transition-all ease-in duration-400"
-              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
-              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> On n’a pas de baguette magique. Mais on a une
-                méthode. <br /> Si vous êtes prêt·e à collaborer avec transparence, on peut faire décoller vos réseaux —
-                sans improvisation, ni sacrifice de temps ou d’énergie. <br />
-                <br /> Et surtout : on ne travaille pas qu’avec un seul profil de client. <span
-                  class="font-bold text-[#c78a5c]">B2B, B2C, e-commerce, services, formation, restauration,
-                  culture…</span> : notre méthode s’adapte à votre réalité, pas l’inverse.
-              </p>
-            </div>
-          </div>
-
-          <!-- QUESTION 2 -->
-
-          <div class="border-b border-[#dcd6c9]">
-            <button @click="selected !== 2 ? selected = 2 : selected = null" onclick="sa_event('open_faq_q2')"
-              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Et si je ne suis
-              pas du tout à l’aise avec les réseaux ? <span x-text="selected === 2 ? '-' : '+'"></span>
-            </button>
-            <div x-show="selected === 2" x-transition:enter="transition-all ease-out duration-500"
-              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
-              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave="transition-all ease-in duration-400"
-              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
-              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> Tant mieux. On ne vous demande pas d’être
-                influenceur ou créateur de contenu à plein temps. <br />
-                <span class="font-bold">Vous restez concentré sur votre activité</span> : on se charge de rendre votre
-                présence utile, visible, et alignée à votre ton. <br />
-                <br /> Après tout, <em>vous ne demanderiez pas à votre plombier de réparer votre toiture</em> — chacun
-                son métier 😉
-              </p>
-            </div>
-          </div>
-
-          <!-- QUESTION 3 -->
-
-          <div class="border-b border-[#dcd6c9]">
-            <button @click="selected !== 3 ? selected = 3 : selected = null" onclick="sa_event('open_faq_q3')"
-              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Est-ce que j’aurai
-              le temps de suivre l’accompagnement ? <span x-text="selected === 3 ? '-' : '+'"></span>
-            </button>
-            <div x-show="selected === 3" x-transition:enter="transition-all ease-out duration-500"
-              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
-              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave="transition-all ease-in duration-400"
-              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
-              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> L’accompagnement est conçu pour vous <span
-                  class="font-bold">faire gagner du temps</span> — pas pour vous en prendre. <br /> Vous restez
-                décisionnaire, on s’occupe du reste. <span class="font-bold">Comptez 1h toutes les 2 semaines</span>
-                pour valider, ajuster, et avancer ensemble. <br />
-                <br /> On reste aussi disponibles en dehors des points fixes. <em>Questions, doutes, urgences ?</em>
-                Vous n’êtes jamais seul. On s’adapte à votre rythme, pas l’inverse.
-              </p>
-            </div>
-          </div>
-
-          <!-- QUESTION 4 -->
-
-          <div class="border-b border-[#dcd6c9]">
-            <button @click="selected !== 4 ? selected = 4 : selected = null" onclick="sa_event('open_faq_q4')"
-              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Et après les 90
-              jours, je fais quoi ? <span x-text="selected === 4 ? '-' : '+'"></span>
-            </button>
-            <div x-show="selected === 4" x-transition:enter="transition-all ease-out duration-500"
-              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
-              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave="transition-all ease-in duration-400"
-              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
-              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> À la fin du programme, vous repartez avec une <span
-                  class="font-bold">stratégie claire</span>, des <span class="font-bold">process solides</span>, et une
-                <span class="font-bold">bibliothèque de contenus</span> prête à l’emploi. <br />
-                <br /> Si vous êtes satisfait·e de notre méthode et des résultats qu’elle vous a apportée, <span
-                  class="font-bold text-[#c78a5c]">nous proposons aussi des suivis long terme</span> — uniquement pour
-                les clients ayant validé l’accompagnement initial.
-              </p>
-            </div>
-          </div>
-
-          <!-- QUESTION 5 -->
-
-          <div class="border-b border-[#dcd6c9]">
-            <button @click="selected !== 5 ? selected = 5 : selected = null" onclick="sa_event('open_faq_q5')"
-              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Vous ne proposez
-              que cet accompagnement ? <span x-text="selected === 5 ? '-' : '+'"></span>
-            </button>
-            <div x-show="selected === 5" x-transition:enter="transition-all ease-out duration-500"
-              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
-              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave="transition-all ease-in duration-400"
-              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
-              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> L’accompagnement “Métamorphose” est notre cœur de
-                méthode, mais ce n’est pas tout. <br />
-                <br /> Pour les entrepreneurs déjà engagés ou ayant terminé le programme, <span class="font-bold">nous
-                  proposons aussi des prestations à la carte</span> : <br /> influence, publicité sur les réseaux,
-                contenus longs, communication évènementielle, gestion de crise… <br />
-                <br /> Ces options sont proposées uniquement <span class="font-semibold">sur devis</span>, selon vos
-                objectifs. <em>On en parle dès le premier appel si vous le souhaitez.</em>
-              </p>
-            </div>
-          </div>
-
-          <!-- QUESTION 6 -->
-
-          <div class="border-b border-[#dcd6c9]">
-            <button @click="selected !== 6 ? selected = 6 : selected = null" onclick="sa_event('open_faq_q6')"
-              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Combien ça coûte,
-              concrètement ? <span x-text="selected === 6 ? '-' : '+'"></span>
-            </button>
-            <div x-show="selected === 6" x-transition:enter="transition-all ease-out duration-500"
-              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
-              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave="transition-all ease-in duration-400"
-              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
-              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> Notre accompagnement signature débute à <strong>3
-                  000 €</strong>, pour 90 jours d’accompagnement complet — <strong>payables en 3 fois</strong>. <br />
-                <em>(Non assujetti à la TVA – régime auto-entrepreneur)</em>
-                <br />
-                <br /> C’est un budget, oui. Mais pour ce tarif, vous avez un <strong>binôme expert, stratégique et
-                  créatif</strong>, concentré à 100 % sur vos résultats. <br /> En réalité ? <strong>Moins cher qu’un
-                  freelance payé à la journée ou qu’un salarié</strong>, plus solide qu’un alternant qui découvre encore
-                le métier.
-              </p>
-            </div>
-          </div>
-
-          <!-- QUESTION 7 -->
-
-          <div class="border-b border-[#dcd6c9]">
-            <button @click="selected !== 7 ? selected = 7 : selected = null" onclick="sa_event('open_faq_q7')"
-              class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> Pourquoi vous
-              plutôt qu’une agence, un salarié ou un alternant ? <span x-text="selected === 7 ? '-' : '+'"></span>
-            </button>
-            <div x-show="selected === 7" x-transition:enter="transition-all ease-out duration-500"
-              x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
-              x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave="transition-all ease-in duration-400"
-              x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
-              x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
-              <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> Une <strong>agence</strong> délègue souvent à des
-                juniors. <br /> Un <strong>salarié</strong> ou un <strong>alternant</strong> vous coûte cher sur la
-                durée — et quand il part, vos réseaux s’arrêtent. <br /> Et un <strong>freelance à la journée</strong>
-                peut être vite onéreux… sans toujours vous apporter de recul stratégique. <br />
-                <br /> Nous, on est <strong>deux indépendants</strong>, unis sous un même nom. <br /> Deux regards. Deux
-                expertises. Une seule vision : la vôtre. <br /> Et <strong>si vous êtes satisfait</strong>, on peut
-                <strong>assurer un suivi long terme</strong> pour faire évoluer vos réseaux avec vous.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- AlpineJS -->
-
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-    <!-- ✅ SECTION CTA FINAL (version allégée et élégante) -->
-
-    <section id="cta" class="scroll-adjust relative py-24 px-6 lg:px-12 text-[#f5f1e6]">
-      <div class="absolute inset-0 bg-cover bg-center z-0"
-        style="background-image: url('/assets/img/cta_final-background.webp');">
-        <div class="absolute inset-0 bg-gradient-to-b from-[#25353f]/70 to-transparent"></div>
-      </div>
-      <div class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-        <!-- 💬 Colonne gauche -->
-
-        <div class="flex flex-col justify-center text-left">
-          <div
-            class="bg-[#25353f]/40 backdrop-blur-md rounded-xl p-8 border border-[#99abbd]/60 shadow-xl ring-1 ring-white/10">
-
-            <!-- Surtitre + badge -->
-
-            <div class="flex justify-between items-center mb-2">
-              <p class="text-xs uppercase tracking-wide text-[#7ea1c4] font-semibold"> Appel découverte gratuit </p>
-              <span class="text-[11px] bg-[#c78a5c] text-white font-bold px-4 py-1 rounded-full shadow-sm"> Sans
-                engagement </span>
-            </div>
-
-            <!-- Titre -->
-
-            <h2 class="text-3xl lg:text-4xl font-bold font-montserrat mb-6 leading-normal"> Attirez <span
-                class="text-[#c78a5c]">les bons clients</span>. <br />
-              <span class="text-[#c78a5c]">Sans vous épuiser</span>.
-            </h2>
-
-            <!-- Corps de texte -->
-
-            <p class="text-lg font-nunito mb-6 max-w-xl leading-relaxed">
-              <span class="text-[#7ea1c4] font-semibold">Prenez 30 minutes</span> pour faire le point. <br /> On parle
-              de votre activité, de vos objectifs, et de ce qui freine votre visibilité aujourd’hui.
-            </p>
-            <p class="text-base font-nunito text-[#e4e4e4] mb-6 leading-relaxed"> Si notre approche vous convient, on
-              vous montre comment elle peut générer des résultats concrets grâce à vos réseaux sociaux — <em>sans
-                jargon, sans pression</em>, et surtout <strong>sans perte de temps</strong>. </p>
-
-            <!-- Sous-texte -->
-
-            <p class="text-sm font-nunito text-[#e4e4e4]"> Choisissez un créneau sur <strong>le
-                calendrier</strong>&nbsp;: vous recevrez une <strong>confirmation par mail</strong> et on échange
-              tranquillement à l’heure prévue. </p>
-
-            <!-- Preuve sociale -->
-
-            <div class="flex items-center gap-3 mt-6">
+          <!-- 🔗 Bloc avatars clients + badge -->
+          <div id="temoignage-hero-social" class="mt-8 bg-[#c78a5c]/40 border border-[#edd3be]/20 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center flex flex-col justify-between opacity-0">
+            <div class="flex items-center gap-4 justify-center flex-wrap text-center">
               <div class="flex -space-x-4">
                 <img src="/assets/img/logo-panadis.webp" alt="Logo de l'enreprise Panadis – client accompagné"
                   class="w-10 h-10 rounded-full border-2 border-white object-cover">
@@ -1020,27 +527,421 @@ function grow(business) {
                   class="w-10 h-10 rounded-full border-2 border-white object-cover">
               </div>
               <span class="inline-block bg-[#7ea1c4] text-white text-xs font-semibold px-3 py-1 rounded-full">+10
-                clients soulagés</span>
+                entrepreneurs soulagés</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 📋 Colonne droite : 2 témoignages empilés -->
+        <div class="flex flex-col gap-8 h-full">
+
+          <!-- Témoignage 2 -->
+          <div id="temoignage-2" class="bg-[#36424d] border border-[#3f4a55] p-6 rounded-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out shadow text-left flex flex-col h-full relative opacity-0">
+            <!-- Icône -->
+            <div class="absolute -top-4 -left-4 bg-[#c78a5c] text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-quote">
+                <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+                <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+              </svg>
+            </div>
+            <!-- Titre -->
+            <p class="text-xl font-extrabold text-[#c78a5c] uppercase mb-4">Une méthode qui tient</p>
+            <!-- Citation -->
+            <div class="flex-grow flex items-center">
+              <p class="text-base font-nunito leading-relaxed italic">
+                “J’ai enfin arrêté d’improviser. On a fixé une stratégie, des contenus clairs, et un rythme réaliste. Ça tient, ça tourne, et je gagne du temps chaque semaine.”
+              </p>
+            </div>
+            <!-- Signature -->
+            <div class="flex items-center gap-3 mt-6">
+              <img src="/assets/img/logo-panadis.webp"
+                alt="Logo de Panadis - Entreprise accompagnée et satisfaite de notre méthode"
+                class="w-12 h-12 rounded-full border-2 border-white object-cover">
+              <div>
+                <p class="font-bold">Patrick B.</p>
+                <p class="text-sm text-[#c2c2c2]">Co-fondateur de Panadis</p>
+                <p class="text-xs text-[#fcd34d] mt-1">⭐⭐⭐⭐⭐</p>
+              </div>
             </div>
           </div>
 
-          <!-- Bloc alerte -->
-
-          <div
-            class="bg-[#c78a5c]/90 backdrop-blur-sm text-white text-sm p-4 rounded-xl shadow-md font-nunito mt-8 border border-[#edd3be]/20">
-            ⚠️ Pour garantir un travail de qualité à chaque client, nous n'acceptons qu’un nombre limité de missions en
-            parallèle. Premier arrivé, premier servi ;) </div>
-        </div>
-
-        <!-- 📅 Calendly -->
-
-        <div>
-          <div class="calendly-inline-widget" style="min-width:320px; height:630px;"
-            data-url="https://calendly.com/chezparallax/30min?hide_event_type_details=1&hide_gdpr_banner=1"></div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <!-- Témoignage 3 -->
+          <div id="temoignage-3" class="bg-[#36424d] border border-[#3f4a55] p-6 rounded-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out shadow text-left flex flex-col h-full relative opacity-0">
+            <!-- Icône -->
+            <div class="absolute -top-4 -left-4 bg-[#c78a5c] text-white w-8 h-8 rounded-full flex items-center justify-center shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-quote">
+                <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+                <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+              </svg>
+            </div>
+            <!-- Titre -->
+            <p class="text-xl font-extrabold text-[#c78a5c] uppercase mb-4">Clarté & cohérence</p>
+            <!-- Citation -->
+            <div class="flex-grow flex items-center">
+              <p class="text-base font-nunito leading-relaxed italic">
+                “Avant, je communiquais sans trop savoir où j’allais. Ensemble, on a tout aligné. Mon audience comprend mon message — et moi aussi.”
+              </p>
+            </div>
+            <!-- Signature -->
+            <div class="flex items-center gap-3 mt-6">
+              <img src="/assets/img/logo-la_fine_equipe.webp"
+                alt="Logo de La Fine Équipe, marque qui a retrouvé clarté et cohérence pour ses réseaux sociaux avec l'accompagnement de Parallax"
+                class="w-12 h-12 rounded-full border-2 border-white object-cover">
+              <div>
+                <p class="font-bold">Martial L.</p>
+                <p class="text-sm text-[#c2c2c2]">Co-gérant de La Fine Équipe</p>
+                <p class="text-xs text-[#fcd34d] mt-1">⭐⭐⭐⭐⭐</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+
+    <!-- 🧲 LEAD MAGNET -->
+  <section id="freebie" class="scroll-adjust bg-white text-[#25353f] pt-12 pb-24 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Colonne gauche : Texte + formulaire -->
+      <div class="space-y-6">
+
+        <h2 id="freebie-title" class="text-3xl lg:text-4xl font-extrabold font-montserrat flex items-center gap-2 opacity-0">
+          ✨ Pas encore prêt·e pour un appel ?
+        </h2>
+        <p id="freebie-lead" class="text-lg font-nunito opacity-0">
+          On vous a préparé un kit de survie express pour voir où vous en êtes et comment avancer :
+        </p>
+
+        <!-- Bloc bonus -->
+        <div id="freebie-bonus" class="border border-[#7ea1c4]/50 border-l-4 border-[#7ea1c4] bg-white p-6 rounded-xl shadow-xl space-y-6 opacity-0">
+          <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
+            <p class="font-semibold text-[#25353f] mb-1">📘 Un guide PDF</p>
+            <p class="text-sm font-nunito text-[#4a4a4a]"><i>7 erreurs INVISIBLES qui SABOTENT ta visibilité - et comment les corriger sans sacrifier tes soirées</i></p>
+          </div>
+          <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
+            <p class="font-semibold text-[#25353f] mb-1">📅 Calendrier éditorial</p>
+            <p class="text-sm font-nunito text-[#4a4a4a]">Un modèle prêt à dupliquer pour organiser ta communication sans charge mentale</p>
+          </div>
+          <div class="bg-[#f5f1e6] rounded-xl p-4 text-left shadow-md">
+            <p class="font-semibold text-[#25353f] mb-1">🖊 +100 idées de posts</p>
+            <p class="text-sm font-nunito text-[#4a4a4a]">Classées par objectif et type de contenu. Fini les manques d'inspiration.</p>
+          </div>
+        </div>
+        <p id="freebie-desc" class="text-base font-nunito italic text-[#4a4a4a] justify-center opacity-0">
+          Parfait si vous voulez faire le point, retrouver de la clarté, et poser les premières briques d’une com’ qui vous ressemble.
+        </p>
+
+        <!-- Formulaire MailerLite -->
+        <form id="freebie-form"
+          action="https://assets.mailerlite.com/jsonp/1452538/forms/152670669521291134/subscribe"
+          method="post"
+          class="space-y-4 opacity-0"
+          onsubmit="submitMailerLite(event)">
+          <div class="flex flex-col md:flex-row gap-4">
+            <input type="text" name="fields[name]" placeholder="Prénom"
+              class="w-full md:w-1/2 px-4 py-3 rounded-lg border border-[#ddd6cb] bg-[#f9f8f5] text-[#25353f] placeholder-[#999] font-nunito focus:outline-none focus:ring-2 focus:ring-[#7ea1c4]"
+              required>
+            <input type="email" name="fields[email]" placeholder="Email"
+              class="w-full md:w-1/2 px-4 py-3 rounded-lg border border-[#ddd6cb] bg-[#f9f8f5] text-[#25353f] placeholder-[#999] font-nunito focus:outline-none focus:ring-2 focus:ring-[#7ea1c4]"
+              required>
+            <input type="hidden" name="ml-submit" value="1">
+            <input type="hidden" name="anticsrf" value="true">
+          </div>
+          <button type="submit" onclick="sa_event('click_freebie_cta')"
+            class="w-full inline-block bg-[#7ea1c4] hover:bg-[#c78a5c] transition-all duration-200 ease-in-out text-white font-semibold py-3 px-8 rounded-lg font-montserrat text-base shadow hover:scale-[1.03] active:scale-[0.98]">
+            📘 Je télécharge mon kit de survie social media offert
+          </button>
+        </form>
+
+        <!-- Message de confirmation -->
+        <div id="confirmation-message"
+          class="hidden bg-[#e6f5ec] text-[#2d6a4f] border border-[#b7e4c7] shadow-md rounded-xl p-6 font-nunito">
+          <h3 class="text-xl font-semibold mb-2">🎉 C’est en route !</h3>
+          <p class="mb-4">Votre kit de survie vient de décoller 🚀<br>
+            Vous allez le recevoir dans votre boîte mail dans les 2 prochaines minutes (pensez à vérifier les spams).
+          </p>
+          <p class="mb-4 italic">En attendant, respirez. Vous venez de poser un vrai premier pas vers une
+            communication plus claire, plus simple, plus stratégique.<br>
+            Et ça, c’est déjà énorme 👏</p>
+          <p class="text-sm mt-2">🧠 Si jamais vous voullez en parler de vive voix, vous pouvez réserver un appel
+            découverte juste en dessous.</p>
+        </div>
+
+        <!-- Message d'erreur -->
+        <div id="error-message"
+          class="hidden bg-red-50 text-red-800 border border-red-200 shadow-sm rounded-xl p-6 font-nunito">
+          <h3 class="text-xl font-semibold mb-2">⚠️ Oups, une erreur est survenue.</h3>
+          <p class="mb-2">Vérifiez bien votre email ou réessayez dans quelques instants.</p>
+          <p class="text-sm italic">Si le problème persiste, vous pouvez aussi nous écrire directement à <a
+              href="mailto:hello@chezparallax.fr">hello@chezparallax.fr</a> et on vous envoie ça au plus vite !".</p>
+        </div>
+
+        <p class="text-sm font-nunito text-[#999] text-center">📥 Vous recevrez tout dans votre boîte mail dans quelques minutes.</p>
+      </div>
+
+      <!-- Colonne droite : Mockup responsive -->
+      <div id="freebie-img-col" class="relative w-full aspect-[3/4] lg:max-w-md mx-auto opacity-0">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <img
+            src="/assets/img/illustration-freebie.webp"
+            alt="Kit de Survie Social Media par Parallax" class="w-full h-auto object-contain drop-shadow-xl">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+    <!-- ❓ SECTION FAQ ACCORDÉON -->
+  <section id="faq" class="scroll-adjust bg-[#f5f1e6] text-[#25353f] py-24 px-6 lg:px-12">
+    <div class="max-w-4xl mx-auto">
+
+      <!-- 🎯 Titre + Sous-titre -->
+      <h2 id="faq-title" class="text-3xl lg:text-4xl font-bold text-center mb-4 font-montserrat"> 
+        On parie que <span class="text-[#c78a5c]">vous</span> vous posez ces questions&nbsp;? 
+      </h2>
+      <p id="faq-lead" class="text-base text-center text-[#4a4a4a] max-w-2xl mx-auto mb-12 font-nunito"> 
+        Ce n’est pas juste vous. Chaque entrepreneur qu’on accompagne a traversé ces hésitations. <br /> 
+        Et c’est normal&nbsp;: <span class="font-semibold text-[#c78a5c]">investir dans sa communication</span>, ça mérite des réponses claires.
+      </p>
+      <div x-data="{ selected: null }" class="space-y-4">
+
+        <!-- QUESTION 1 -->
+        <div class="border-b border-[#dcd6c9] transition-all duration-500 ease-in-out">
+          <button @click="selected !== 1 ? selected = 1 : selected = null" onclick="sa_event('open_faq_q1')"
+            class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> 
+            Est-ce que ça va vraiment marcher pour moi ? <span x-text="selected === 1 ? '-' : '+'"></span>
+          </button>
+          <div x-show="selected === 1" x-transition:enter="transition-all ease-out duration-500"
+            x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+            x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave="transition-all ease-in duration-400"
+            x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+            <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> On n’a pas de baguette magique. Mais on a une
+              méthode. <br /> Si vous êtes prêt·e à collaborer avec transparence, on peut faire décoller vos réseaux —
+              sans improvisation, ni sacrifice de temps ou d’énergie. <br />
+              <br /> Et surtout : on ne travaille pas qu’avec un seul profil de client. <span
+                class="font-bold text-[#c78a5c]">B2B, B2C, e-commerce, services, formation, restauration,
+                culture…</span> : notre méthode s’adapte à votre réalité, pas l’inverse.
+            </p>
+          </div>
+        </div>
+
+        <!-- QUESTION 2 -->
+        <div class="border-b border-[#dcd6c9]">
+          <button @click="selected !== 2 ? selected = 2 : selected = null" onclick="sa_event('open_faq_q2')"
+            class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> 
+            Et si je ne suis pas du tout à l’aise avec les réseaux ? <span x-text="selected === 2 ? '-' : '+'"></span>
+          </button>
+          <div x-show="selected === 2" x-transition:enter="transition-all ease-out duration-500"
+            x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+            x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave="transition-all ease-in duration-400"
+            x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+            <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> Tant mieux. On ne vous demande pas d’être
+              influenceur ou créateur de contenu à plein temps. <br />
+              <span class="font-bold">Vous restez concentré sur votre activité</span> : on se charge de rendre votre
+              présence utile, visible, et alignée à votre ton. <br />
+              <br /> Après tout, <em>vous ne demanderiez pas à votre plombier de réparer votre toiture</em> — chacun
+              son métier 😉
+            </p>
+          </div>
+        </div>
+
+        <!-- QUESTION 3 -->
+        <div class="border-b border-[#dcd6c9]">
+          <button @click="selected !== 3 ? selected = 3 : selected = null" onclick="sa_event('open_faq_q3')"
+            class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> 
+            Est-ce que j’aurai le temps de suivre l’accompagnement ? <span x-text="selected === 3 ? '-' : '+'"></span>
+          </button>
+          <div x-show="selected === 3" x-transition:enter="transition-all ease-out duration-500"
+            x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+            x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave="transition-all ease-in duration-400"
+            x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+            <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> L’accompagnement est conçu pour vous <span
+                class="font-bold">faire gagner du temps</span> — pas pour vous en prendre. <br /> Vous restez
+              décisionnaire, on s’occupe du reste. <span class="font-bold">Comptez 1h toutes les 2 semaines</span>
+              pour valider, ajuster, et avancer ensemble. <br />
+              <br /> On reste aussi disponibles en dehors des points fixes. <em>Questions, doutes, urgences ?</em>
+              Vous n’êtes jamais seul. On s’adapte à votre rythme, pas l’inverse.
+            </p>
+          </div>
+        </div>
+
+        <!-- QUESTION 4 -->
+        <div class="border-b border-[#dcd6c9]">
+          <button @click="selected !== 4 ? selected = 4 : selected = null" onclick="sa_event('open_faq_q4')"
+            class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> 
+            Et après les 90 jours, je fais quoi ? <span x-text="selected === 4 ? '-' : '+'"></span>
+          </button>
+          <div x-show="selected === 4" x-transition:enter="transition-all ease-out duration-500"
+            x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+            x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave="transition-all ease-in duration-400"
+            x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+            <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> À la fin du programme, vous repartez avec une <span
+                class="font-bold">stratégie claire</span>, des <span class="font-bold">process solides</span>, et une
+              <span class="font-bold">bibliothèque de contenus</span> prête à l’emploi. <br />
+              <br /> Si vous êtes satisfait·e de notre méthode et des résultats qu’elle vous a apportée, <span
+                class="font-bold text-[#c78a5c]">nous proposons aussi des suivis long terme</span> — uniquement pour
+              les clients ayant validé l’accompagnement initial.
+            </p>
+          </div>
+        </div>
+
+        <!-- QUESTION 5 -->
+        <div class="border-b border-[#dcd6c9]">
+          <button @click="selected !== 5 ? selected = 5 : selected = null" onclick="sa_event('open_faq_q5')"
+            class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> 
+            Vous ne proposez que cet accompagnement ? <span x-text="selected === 5 ? '-' : '+'"></span>
+          </button>
+          <div x-show="selected === 5" x-transition:enter="transition-all ease-out duration-500"
+            x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+            x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave="transition-all ease-in duration-400"
+            x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+            <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> L’accompagnement “Métamorphose” est notre cœur de
+              méthode, mais ce n’est pas tout. <br />
+              <br /> Pour les entrepreneurs déjà engagés ou ayant terminé le programme, <span class="font-bold">nous
+                proposons aussi des prestations à la carte</span> : <br /> influence, publicité sur les réseaux,
+              contenus longs, communication évènementielle, gestion de crise… <br />
+              <br /> Ces options sont proposées uniquement <span class="font-semibold">sur devis</span>, selon vos
+              objectifs. <em>On en parle dès le premier appel si vous le souhaitez.</em>
+            </p>
+          </div>
+        </div>
+
+        <!-- QUESTION 6 -->
+        <div class="border-b border-[#dcd6c9]">
+          <button @click="selected !== 6 ? selected = 6 : selected = null" onclick="sa_event('open_faq_q6')"
+            class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> 
+            Combien ça coûte, concrètement ? <span x-text="selected === 6 ? '-' : '+'"></span>
+          </button>
+          <div x-show="selected === 6" x-transition:enter="transition-all ease-out duration-500"
+            x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+            x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave="transition-all ease-in duration-400"
+            x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+            <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> Notre accompagnement signature débute à <strong>3
+                000 €</strong>, pour 90 jours d’accompagnement complet — <strong>payables en 3 fois</strong>. <br />
+              <em>(Non assujetti à la TVA – régime auto-entrepreneur)</em>
+              <br />
+              <br /> C’est un budget, oui. Mais pour ce tarif, vous avez un <strong>binôme expert, stratégique et
+                créatif</strong>, concentré à 100 % sur vos résultats. <br /> En réalité ? <strong>Moins cher qu’un
+                freelance payé à la journée ou qu’un salarié</strong>, plus solide qu’un alternant qui découvre encore
+              le métier.
+            </p>
+          </div>
+        </div>
+
+        <!-- QUESTION 7 -->
+        <div class="border-b border-[#dcd6c9]">
+          <button @click="selected !== 7 ? selected = 7 : selected = null" onclick="sa_event('open_faq_q7')"
+            class="w-full flex justify-between items-center py-4 font-semibold text-left text-lg"> 
+            Pourquoi vous plutôt qu’une agence, un salarié ou un alternant ? <span x-text="selected === 7 ? '-' : '+'"></span>
+          </button>
+          <div x-show="selected === 7" x-transition:enter="transition-all ease-out duration-500"
+            x-transition:enter-start="opacity-0 max-h-0 scale-y-95"
+            x-transition:enter-end="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave="transition-all ease-in duration-400"
+            x-transition:leave-start="opacity-100 max-h-[1000px] scale-y-100"
+            x-transition:leave-end="opacity-0 max-h-0 scale-y-95" class="overflow-hidden">
+            <p class="text-base font-nunito pb-4 text-[#4a4a4a]"> Une <strong>agence</strong> délègue souvent à des
+              juniors. <br /> Un <strong>salarié</strong> ou un <strong>alternant</strong> vous coûte cher sur la
+              durée — et quand il part, vos réseaux s’arrêtent. <br /> Et un <strong>freelance à la journée</strong>
+              peut être vite onéreux… sans toujours vous apporter de recul stratégique. <br />
+              <br /> Nous, on est <strong>deux indépendants</strong>, unis sous un même nom. <br /> Deux regards. Deux
+              expertises. Une seule vision : la vôtre. <br /> Et <strong>si vous êtes satisfait</strong>, on peut
+              <strong>assurer un suivi long terme</strong> pour faire évoluer vos réseaux avec vous.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ✅ SECTION CTA FINAL (version allégée et élégante) -->
+
+<section id="cta" class="scroll-adjust relative py-24 px-6 lg:px-12 text-[#f5f1e6]">
+  <!-- Background image + gradient -->
+  <div class="absolute inset-0 bg-cover bg-center z-0"
+    style="background-image: url('/assets/img/cta_final-background.webp');">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#25353f]/70 to-transparent"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+
+    <!-- Bloc CTA principal -->
+    <div class="flex-1 flex flex-col justify-center text-left bg-[#25353f]/70 backdrop-blur-lg rounded-2xl p-10 border border-[#7ea1c4]/40 shadow-2xl">
+      <!-- Surtitre + badge -->
+      <div class="flex justify-between items-center mb-3">
+        <span id="cta-surtitre" class="text-xs uppercase tracking-wider text-[#7ea1c4] font-bold">Appel découverte gratuit</span>
+        <span id="cta-badge" class="text-[11px] bg-[#c78a5c] text-white font-bold px-4 py-1 rounded-full shadow-sm">Sans engagement</span>
+      </div>
+      <!-- Promesse conversion-first -->
+      <h2 id="cta-title" class="text-3xl md:text-4xl font-extrabold font-montserrat leading-tight mb-4">
+        Attirez <span class="text-[#c78a5c]">les bons clients</span>.<br>
+        <span class="text-[#c78a5c]">Sans vous épuiser</span>.
+      </h2>
+      <!-- Corps de texte -->
+      <p class="text-lg font-nunito mb-6 max-w-xl leading-relaxed">
+        <span class="text-[#7ea1c4] font-semibold">Prenez 30 minutes</span> pour faire le point.<br>
+        On parle de votre activité, de vos objectifs, et de ce qui freine votre visibilité aujourd’hui.
+      </p>
+      <p class="text-base font-nunito text-[#e4e4e4] mb-6 leading-relaxed">
+        Si notre approche vous convient, on vous montre comment elle peut générer des résultats concrets grâce à vos réseaux sociaux — <em>sans jargon, sans pression</em>, et surtout <strong>sans perte de temps</strong>.
+      </p>
+      <!-- Sous-texte -->
+      <p class="text-sm font-nunito text-[#e4e4e4]">Choisissez un créneau sur <strong>le calendrier</strong>&nbsp;: vous recevrez une <strong>confirmation par mail</strong> et on échange tranquillement à l’heure prévue.</p>
+      <!-- Preuve sociale -->
+      <div class="flex items-center gap-3 mt-6">
+        <div class="flex -space-x-4">
+          <img src="/assets/img/logo-panadis.webp" alt="Logo de l'enreprise Panadis – client accompagné" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+          <img src="/assets/img/logo-times.webp" alt="Logo de l'enreprise Time's – client accompagné" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+          <img src="/assets/img/logo-aja.webp" alt="Logo de la marque Aujourd'hui j'arrête – client accompagné" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+          <img src="/assets/img/logo-dolorium_tattoo.webp" alt="Logo de l'indépendant Dolorium Tattoo – client accompagné" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+          <img src="/assets/img/logo-la_fine_equipe.webp" alt="Logo de la marque La Fine Équipe – client accompagné" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+          <img src="/assets/img/logo-energus_10.webp" alt="Logo de la marque energus10 – client accompagné" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+        </div>
+        <span class="inline-block bg-[#7ea1c4] text-white text-xs font-semibold px-3 py-1 rounded-full">+10 clients soulagés</span>
+      </div>
+      <!-- CTA Button Cal.com -->
+      <div class="mt-8 flex justify-center w-full">
+        <button
+          id="cta-cal-btn"
+          data-cal-link="thibaud-chezparallax/decouverte"
+          data-cal-namespace="decouverte"
+          data-cal-config='{"layout":"month_view"}'
+          class="w-full max-w-xl flex justify-center items-center bg-[#c78a5c] hover:bg-[#7ea1c4] transition-all duration-200 ease-in-out text-white font-semibold py-4 px-8 rounded-lg font-montserrat text-lg shadow-xl hover:scale-[1.04] active:scale-[0.97] focus:ring-2 focus:ring-[#7ea1c4] focus:outline-none"
+          aria-label="Réservez votre appel découverte offert"
+          onclick="sa_event('click_cta_final');"
+        >
+          🚀 Je réserve mon appel découverte offert
+        </button>
+      </div>
+      <p id="cta-note" class="mt-2 text-xs text-[#bdd6f7] text-center">
+        Confirmation immédiate – aucun paiement requis, agenda 100% flexible.
+      </p>
+    </div>
+    
+  </div>
+  <div class="animate-pulse mt-4 w-full flex justify-center">
+  <div class="bg-[#c78a5c]/90 backdrop-blur-sm text-white text-sm p-4 rounded-xl shadow-md font-nunito border border-[#edd3be]/20 w-full max-w-xl">
+    ⚠️ Pour garantir un travail de qualité à chaque client, nous n'acceptons qu’un nombre limité de missions en parallèle. Premier arrivé, premier servi ;)
+  </div>
+</div>
+</section>
+
   </main>
 
   <!-- 🡦 FOOTER -->
@@ -1051,33 +952,11 @@ function grow(business) {
 
   </footer>
 
-  <!-- 🛠 INIT ICONES LUCIDE -->
+<!-- NON-CRITICAL JS -->
+<script src="/js/main-noncritical.js" type="module" defer></script>
 
-  <script>
-    lucide.createIcons();
-  </script>
-
-
-
-  <script>
-    // Charge dynamiquement le header et le footer
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("/parts/header.html")
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById("header").innerHTML = data;
-          lucide.createIcons(); // Recrée les icônes après avoir injecté le header
-        });
-
-      fetch("/parts/footer.html")
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById("footer").innerHTML = data;
-          lucide.createIcons(); // Recrée les icônes après avoir injecté le footer
-        });
-    });
-  </script>
-
+<!-- ANALYTICS -->
+<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
 </body>
 
